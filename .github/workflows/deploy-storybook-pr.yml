@@ -1,0 +1,67 @@
+name: Deploy Storybook to PR folder
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  deploy-storybook:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Deploy to storybook branch
+        run: |
+          # PR番号を取得
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          
+          # storybookブランチをチェックアウト（存在しない場合は作成）
+          git fetch origin storybook:storybook || git checkout --orphan storybook
+          git checkout storybook || git checkout --orphan storybook
+          
+          # PR番号のフォルダを作成
+          mkdir -p pr-${PR_NUMBER}
+          
+          # storybook-staticの中身をコピー
+          cp -r storybook-static/* pr-${PR_NUMBER}/
+          
+          # 変更をコミット
+          git add pr-${PR_NUMBER}
+          git commit -m "Deploy Storybook for PR #${PR_NUMBER}" || echo "No changes to commit"
+          
+          # プッシュ
+          git push origin storybook
+
+      - name: Comment PR with Storybook link
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const storybookUrl = `https://${context.repo.owner}.github.io/${context.repo.repo}/pr-${prNumber}/`;
+            
+            github.rest.issues.createComment({
+              issue_number: prNumber,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `📚 Storybook has been deployed!\n\n🔗 [View Storybook](${storybookUrl})`
+            });
