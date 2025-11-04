@@ -1,9 +1,9 @@
-name: Deploy Storybook to master folder
+name: Deploy Storybook to main folder
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy-storybook:
@@ -37,10 +37,10 @@ jobs:
           git fetch origin storybook:storybook 2>/dev/null || true
           git checkout storybook 2>/dev/null || git checkout --orphan storybook
           
-          mkdir -p master
-          rm -rf master/*
-          cp -r storybook-static/* master/
+          mkdir -p main
+          rm -rf main/*
+          cp -r storybook-static/* main/
           
-          git add master
-          git commit -m "Deploy Storybook for master branch" || exit 0
+          git add main
+          git commit -m "Deploy Storybook for main branch" || exit 0
           git push origin storybook
