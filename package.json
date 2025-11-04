@@ -10,7 +10,9 @@
     "lint:html": "markuplint \"**/*.tsx\"",
     "format": "prettier --write .",
     "type-check": "tsc --noEmit",
-    "prepare": "husky"
+    "prepare": "husky",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "next": "15.5.4",
@@ -21,6 +23,7 @@
     "@eslint/eslintrc": "3.3.1",
     "@markuplint/jsx-parser": "4.7.21",
     "@markuplint/react-spec": "4.5.21",
+    "@storybook/nextjs": "10.0.4",
     "@tailwindcss/postcss": "4.1.14",
     "@types/node": "24.7.0",
     "@types/react": "19.2.2",
@@ -28,10 +31,12 @@
     "eslint": "9.37.0",
     "eslint-config-next": "15.5.4",
     "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-storybook": "10.0.4",
     "husky": "9.1.7",
     "lint-staged": "16.2.3",
     "markuplint": "4.13.1",
     "prettier": "3.6.2",
+    "storybook": "10.0.4",
     "tailwindcss": "4.1.14",
     "typescript": "5.9.3"
   },
