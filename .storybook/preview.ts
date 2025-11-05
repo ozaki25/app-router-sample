@@ -1,7 +1,11 @@
 import { initialize, mswLoader } from 'msw-storybook-addon';
 import type { Preview } from '@storybook/nextjs';
 
-initialize();
+initialize({
+  serviceWorker: {
+    url: './mockServiceWorker.js',
+  },
+});
 
 const preview: Preview = {
   parameters: {
