@@ -35,6 +35,8 @@
     "husky": "9.1.7",
     "lint-staged": "16.2.3",
     "markuplint": "4.13.1",
+    "msw": "2.11.6",
+    "msw-storybook-addon": "2.0.6",
     "prettier": "3.6.2",
     "storybook": "10.0.4",
     "tailwindcss": "4.1.14",
@@ -48,6 +50,11 @@
       "bash -c 'tsc --noEmit'",
       "eslint --fix",
       "markuplint --fix"
+    ]
+  },
+  "msw": {
+    "workerDirectory": [
+      ".storybook/public"
     ]
   }
 }
