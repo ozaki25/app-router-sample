@@ -1,5 +1,15 @@
 import './button.css';
 
+const fetchData = async () => {
+  try {
+    const response = await fetch('/test');
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+};
+
 export interface ButtonProps {
   /** Is this the principal call to action on the page? */
   primary?: boolean;
@@ -27,6 +37,7 @@ export const Button = ({
       type="button"
       className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
       {...props}
+      onClick={fetchData}
     >
       {label}
       <style jsx>{`
