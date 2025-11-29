@@ -57,7 +57,7 @@ export const Small: Story = {
   },
 };
 
-export const apiSuccess: Story = {
+export const ApiSuccess: Story = {
   args: {
     label: 'API Success',
   },
@@ -68,7 +68,7 @@ export const apiSuccess: Story = {
   },
 };
 
-export const apiError: Story = {
+export const ApiError: Story = {
   args: {
     label: 'API Error',
   },

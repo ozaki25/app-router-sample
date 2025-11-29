@@ -7,7 +7,7 @@ on:
 jobs:
   deploy-storybook:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -34,21 +34,21 @@ jobs:
         run: |
           # PR番号を取得
           PR_NUMBER=${{ github.event.pull_request.number }}
-          
+
           # storybookブランチをチェックアウト（存在しない場合は作成）
           git fetch origin storybook:storybook || git checkout --orphan storybook
           git checkout storybook || git checkout --orphan storybook
-          
+
           # PR番号のフォルダを作成
           mkdir -p pr-${PR_NUMBER}
-          
+
           # storybook-staticの中身をコピー
           cp -r storybook-static/* pr-${PR_NUMBER}/
-          
+
           # 変更をコミット
           git add pr-${PR_NUMBER}
           git commit -m "Deploy Storybook for PR #${PR_NUMBER}" || echo "No changes to commit"
-          
+
           # プッシュ
           git push origin storybook
 
@@ -58,7 +58,7 @@ jobs:
           script: |
             const prNumber = context.payload.pull_request.number;
             const storybookUrl = `https://${context.repo.owner}.github.io/${context.repo.repo}/pr-${prNumber}/`;
-            
+
             github.rest.issues.createComment({
               issue_number: prNumber,
               owner: context.repo.owner,

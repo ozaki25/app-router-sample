@@ -8,7 +8,7 @@ on:
 jobs:
   deploy-storybook:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -36,11 +36,11 @@ jobs:
         run: |
           git fetch origin storybook:storybook 2>/dev/null || true
           git checkout storybook 2>/dev/null || git checkout --orphan storybook
-          
+
           mkdir -p main
           rm -rf main/*
           cp -r storybook-static/* main/
-          
+
           git add main
           git commit -m "Deploy Storybook for main branch" || exit 0
           git push origin storybook
