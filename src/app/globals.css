@@ -1,26 +1,35 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
+  --background: #c3da9f; /* body背景 youScene */
+  --container: #fffff0; /* container, show-article背景 */
+  --header-fg: #ffffff; /* ヘッダー文字 */
+  --header-hover: #006633; /* ヘッダーhover文字 */
+  --link: #336633; /* 通常リンク */
+  --link-hover: #339933; /* ホバーリンク */
+  --btn-bg: #91cf3b; /* ボタン背景 */
+  --btn-hover: #66cc00; /* ボタンhover背景 */
+  --btn-fg: #ffffff; /* ボタン文字 */
+  --tag-bg: #ebf0e6; /* タグ背景 */
+  --title: #006633; /* タイトル色 */
+  --error: red; /* エラー */
   --foreground: #171717;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-container: var(--container);
+  --color-header-fg: var(--header-fg);
+  --color-header-hover: var(--header-hover);
+  --color-link: var(--link);
+  --color-link-hover: var(--link-hover);
+  --color-btn-bg: var(--btn-bg);
+  --color-btn-hover: var(--btn-hover);
+  --color-btn-fg: var(--btn-fg);
+  --color-tag-bg: var(--tag-bg);
+  --color-title: var(--title);
+  --color-error: var(--error);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
