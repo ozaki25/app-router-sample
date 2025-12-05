@@ -10,5 +10,15 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Story1: Story = {
-  name: 'Nextのロゴ',
+  name: 'Nextのロゴ(png)',
+  args: {
+    src: '/next.png',
+  },
+};
+
+export const Story2: Story = {
+  name: 'Nextのロゴ(svg)',
+  args: {
+    src: '/next.svg',
+  },
 };
