@@ -25,7 +25,7 @@ jobs:
         run: npm ci
 
       - name: Build Storybook
-        run: npm run build-storybook
+        run: STORYBOOK_BASE_PATH=/${{ github.event.repository.name }}/pr-${{ github.event.pull_request.number }} npm run build-storybook
 
       - name: Configure Git
         run: |
