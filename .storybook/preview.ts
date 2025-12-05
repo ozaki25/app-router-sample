@@ -1,5 +1,6 @@
 import { initialize, mswLoader } from 'msw-storybook-addon';
 import type { Preview } from '@storybook/nextjs';
+import '../src/app/globals.css';
 
 initialize({
   serviceWorker: {
