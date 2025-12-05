@@ -3,7 +3,9 @@ name: Deploy Storybook to PR folder
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-
+    paths:
+      - 'src/**'
+      - 'package.json'
 jobs:
   deploy-storybook:
     runs-on: ubuntu-latest
@@ -53,6 +55,7 @@ jobs:
           git push origin storybook
 
       - name: Comment PR with Storybook link
+        if: github.event.action == 'opened'
         uses: actions/github-script@v7
         with:
           script: |
