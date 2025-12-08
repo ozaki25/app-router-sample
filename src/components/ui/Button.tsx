@@ -4,7 +4,7 @@ import { useFormStatus } from 'react-dom';
 
 type ButtonProps = {
   children: React.ReactNode;
-  type?: 'button' | 'submit' | 'reset';
+  type?: 'button' | 'submit';
   variant?: 'primary' | 'secondary' | 'danger';
   onClick?: () => void;
   disabled?: boolean;
