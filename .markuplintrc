@@ -8,5 +8,8 @@
   "extends": [
     "markuplint:recommended",
     "markuplint:recommended-react"
+  ],
+  "excludeFiles": [
+    "**/*.*.tsx"
   ]
 }
