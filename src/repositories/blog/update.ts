@@ -1,5 +1,11 @@
 import { API_URL } from './config';
-import { Blog, UpdateBlogInput } from '@/types/blog';
+import { Blog } from '@/types/blog';
+
+type UpdateBlogInput = {
+  id: string;
+  title: string;
+  content: string;
+};
 
 export async function update(input: UpdateBlogInput): Promise<Blog> {
   const response = await fetch(`${API_URL}/${input.id}`, {

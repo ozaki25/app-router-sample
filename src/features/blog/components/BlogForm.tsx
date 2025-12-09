@@ -1,33 +1,23 @@
-'use client';
-
 import { Button } from '@/components/ui/Button';
 import { Card, CardBody } from '@/components/ui/Card';
 import { Input } from '@/components/ui/Input';
 import { Textarea } from '@/components/ui/Textarea';
-import type { ActionState } from '@/types/action';
-import type { Blog } from '@/types/blog';
-import { useActionState, useEffect } from 'react';
 
 type Props = {
-  action: (prevState: ActionState, formData: FormData) => Promise<ActionState>;
-  blog?: Blog;
+  formAction: (formData: FormData) => void;
+  defaultTitle?: string;
+  defaultContent?: string;
   submitLabel: string;
+  isPending?: boolean;
 };
 
-const initialState = {
-  success: false,
-  error: undefined,
-};
-
-export function BlogForm({ action, blog, submitLabel }: Props) {
-  const [state, formAction] = useActionState(action, initialState);
-
-  useEffect(() => {
-    if (state?.error) {
-      alert(state.error);
-    }
-  }, [state]);
-
+export function BlogForm({
+  formAction,
+  defaultTitle,
+  defaultContent,
+  submitLabel,
+  isPending,
+}: Props) {
   return (
     <Card>
       <CardBody>
@@ -37,7 +27,7 @@ export function BlogForm({ action, blog, submitLabel }: Props) {
             label="タイトル"
             placeholder="ブログのタイトルを入力"
             required
-            defaultValue={blog?.title}
+            defaultValue={defaultTitle}
           />
           <Textarea
             name="content"
@@ -45,10 +35,10 @@ export function BlogForm({ action, blog, submitLabel }: Props) {
             placeholder="ブログの本文を入力"
             rows={10}
             required
-            defaultValue={blog?.content}
+            defaultValue={defaultContent}
           />
           <div className="flex gap-4">
-            <Button type="submit" variant="primary">
+            <Button type="submit" variant="primary" disabled={isPending}>
               {submitLabel}
             </Button>
           </div>

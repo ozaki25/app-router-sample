@@ -18,7 +18,7 @@ export async function createBlog(
     if (!result.success) {
       return {
         success: false,
-        error: result.error.issues.map((issue) => issue.message).join(', '),
+        error: result.error.issues.map(({ message }) => message).join(', '),
       };
     }
 

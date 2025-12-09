@@ -1,5 +1,10 @@
 import { API_URL } from './config';
-import { Blog, CreateBlogInput } from '@/types/blog';
+import { Blog } from '@/types/blog';
+
+type CreateBlogInput = {
+  title: string;
+  content: string;
+};
 
 export async function create(input: CreateBlogInput): Promise<Blog> {
   const response = await fetch(API_URL, {

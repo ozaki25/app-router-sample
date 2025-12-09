@@ -3,19 +3,23 @@ import { formatDate } from '@/libs/shared/date';
 import { Blog } from '@/types/blog';
 import Link from 'next/link';
 
+function Empty() {
+  return (
+    <Card>
+      <CardBody>
+        <p className="text-gray-500 text-center py-8">ブログ記事がありません</p>
+      </CardBody>
+    </Card>
+  );
+}
+
 type Props = {
   blogs: Blog[];
 };
 
 export function BlogList({ blogs }: Props) {
   if (blogs.length === 0) {
-    return (
-      <Card>
-        <CardBody>
-          <p className="text-gray-500 text-center py-8">ブログ記事がありません</p>
-        </CardBody>
-      </Card>
-    );
+    return <Empty />;
   }
 
   return (

@@ -5,14 +5,3 @@ export type Blog = {
   createdAt: string;
   updatedAt: string;
 };
-
-export type CreateBlogInput = {
-  title: string;
-  content: string;
-};
-
-export type UpdateBlogInput = {
-  id: string;
-  title: string;
-  content: string;
-};
