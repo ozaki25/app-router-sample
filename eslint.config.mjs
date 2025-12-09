@@ -17,6 +17,7 @@ const eslintConfig = defineConfig([
     '.storybook/public/mockServiceWorker.js',
     'storybook-static/**',
     '**/*mock*/**',
+    'coverage/**',
   ]),
 ]);
 
