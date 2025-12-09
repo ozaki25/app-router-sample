@@ -5,6 +5,7 @@ import { z } from 'zod';
 
 export async function getAllBlogRepository(): Promise<Blog[]> {
   const response = await fetch(API_URL, {
+    cache: 'no-store',
     next: { tags: ['blogs'] },
   });
   if (!response.ok) {

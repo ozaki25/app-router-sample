@@ -4,6 +4,7 @@ import { Blog } from '@/types/blog';
 
 export async function getByIdBlogRepository(id: string): Promise<Blog | null> {
   const response = await fetch(`${API_URL}/${id}`, {
+    cache: 'no-store',
     next: { tags: ['blogs', `blog-${id}`] },
   });
   if (response.status === 404) {
