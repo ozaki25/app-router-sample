@@ -1,4 +1,4 @@
-import { API_URL } from './config';
+import { API_URL } from '@/repositories/blog/config';
 
 export async function deleteBlog(id: string): Promise<void> {
   const response = await fetch(`${API_URL}/${id}`, {

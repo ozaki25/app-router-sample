@@ -1,4 +1,5 @@
-import { API_URL } from './config';
+import { responseSchema, toBlog } from './responseSchema';
+import { API_URL } from '@/repositories/blog/config';
 import { Blog } from '@/types/blog';
 
 export async function getById(id: string): Promise<Blog | null> {
@@ -11,5 +12,8 @@ export async function getById(id: string): Promise<Blog | null> {
   if (!response.ok) {
     throw new Error('Failed to fetch blog');
   }
-  return response.json();
+
+  const data = await response.json();
+  const validated = responseSchema.parse(data);
+  return toBlog(validated);
 }
