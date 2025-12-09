@@ -27,7 +27,8 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     ".next/types/**/*.ts",
-    ".storybook/mock/MockImage.tsx"
+    ".storybook/mock/MockImage.tsx",
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": ["node_modules", ".next"]
 }

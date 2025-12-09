@@ -1,4 +1,4 @@
-import { Blog } from '@/libs/shared/types';
+import { Blog } from '@/types/blog';
 import { API_URL } from './config';
 
 export async function getById(id: string): Promise<Blog | null> {

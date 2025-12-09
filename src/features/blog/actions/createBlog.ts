@@ -4,7 +4,7 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { create } from '@/repositories/blog';
 import { blogSchema } from '@/features/blog/validations/blogValidation';
-import { ActionState } from '@/libs/shared/types';
+import { ActionState } from '@/types/action';
 
 export async function createBlog(
   _prevState: ActionState,

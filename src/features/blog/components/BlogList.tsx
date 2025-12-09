@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { Blog } from '@/libs/shared/types';
-import { formatDate } from '@/libs/shared/utils';
+import { Blog } from '@/types/blog';
+import { formatDate } from '@/libs/shared/format';
 import { Card, CardHeader, CardBody, CardFooter } from '@/components/ui/Card';
 
 type BlogListProps = {

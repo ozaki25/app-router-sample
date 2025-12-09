@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import { INITIAL_BLOGS } from '@/libs/shared/constants';
-import { Blog } from '@/libs/shared/types';
+import { INITIAL_BLOGS } from './data';
+import { Blog } from '@/types/blog';
 
 // グローバルスコープでデータを共有
 const getBlogs = (): Blog[] => {

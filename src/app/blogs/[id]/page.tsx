@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getById } from '@/repositories/blog';
-import { formatDate } from '@/libs/shared/utils';
+import { formatDate } from '@/libs/shared/format';
 import { Header } from '@/components/layout/Header';
 import { Container } from '@/components/ui/Container';
 import { Card, CardBody } from '@/components/ui/Card';

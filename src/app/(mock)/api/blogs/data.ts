@@ -1,4 +1,4 @@
-import { Blog } from './types';
+import { Blog } from '@/types/blog';
 
 export const INITIAL_BLOGS: Blog[] = [
   {

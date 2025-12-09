@@ -16,8 +16,3 @@ export type UpdateBlogInput = {
   title: string;
   content: string;
 };
-
-export type ActionState = {
-  success: boolean;
-  error?: string;
-};

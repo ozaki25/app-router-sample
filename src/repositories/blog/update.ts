@@ -1,4 +1,4 @@
-import { Blog, UpdateBlogInput } from '@/libs/shared/types';
+import { Blog, UpdateBlogInput } from '@/types/blog';
 import { API_URL } from './config';
 
 export async function update(input: UpdateBlogInput): Promise<Blog> {

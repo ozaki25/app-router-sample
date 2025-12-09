@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
 import { action } from 'storybook/actions';
-import type { ActionState } from '@/libs/shared/types';
+import type { ActionState } from '@/types/action';
 import { BlogForm } from './BlogForm';
 
 const mockAction = async (_prevState: ActionState, formData: FormData): Promise<ActionState> => {

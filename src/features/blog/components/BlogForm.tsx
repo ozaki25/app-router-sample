@@ -5,7 +5,8 @@ import { Input } from '@/components/ui/Input';
 import { Textarea } from '@/components/ui/Textarea';
 import { Button } from '@/components/ui/Button';
 import { Card, CardBody } from '@/components/ui/Card';
-import type { Blog, ActionState } from '@/libs/shared/types';
+import type { Blog } from '@/types/blog';
+import type { ActionState } from '@/types/action';
 
 type BlogFormProps = {
   action: (prevState: ActionState, formData: FormData) => Promise<ActionState>;

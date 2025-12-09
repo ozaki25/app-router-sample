@@ -3,7 +3,7 @@
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { deleteBlog as deleteBlogRepo } from '@/repositories/blog';
-import { ActionState } from '@/libs/shared/types';
+import { ActionState } from '@/types/action';
 
 export async function deleteBlog(id: string): Promise<ActionState> {
   try {
