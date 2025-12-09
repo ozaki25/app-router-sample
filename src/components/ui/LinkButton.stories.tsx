@@ -28,13 +28,6 @@ export const Secondary: Story = {
   },
 };
 
-export const Danger: Story = {
-  name: 'Dangerリンクボタン',
-  args: {
-    variant: 'danger',
-  },
-};
-
 export const ExternalLink: Story = {
   name: '外部リンク',
   args: {

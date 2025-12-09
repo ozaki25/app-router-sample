@@ -3,11 +3,11 @@ import { Blog } from '@/types/blog';
 import { formatDate } from '@/libs/shared/date';
 import { Card, CardHeader, CardBody, CardFooter } from '@/components/ui/Card';
 
-type BlogListProps = {
+type Props = {
   blogs: Blog[];
 };
 
-export function BlogList({ blogs }: BlogListProps) {
+export function BlogList({ blogs }: Props) {
   if (blogs.length === 0) {
     return (
       <Card>

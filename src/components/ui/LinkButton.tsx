@@ -1,20 +1,13 @@
 import Link from 'next/link';
 
-type LinkButtonProps = {
+type Props = {
   href: string;
   children: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'danger';
+  variant?: 'primary' | 'secondary';
   size?: 'sm' | 'md' | 'lg';
-  className?: string;
 };
 
-export function LinkButton({
-  href,
-  children,
-  variant = 'primary',
-  size = 'md',
-  className = '',
-}: LinkButtonProps) {
+export function LinkButton({ href, children, variant = 'primary', size = 'md' }: Props) {
   const baseStyles = 'inline-block font-medium rounded transition-colors';
 
   const variantStyles = {
@@ -30,10 +23,7 @@ export function LinkButton({
   };
 
   return (
-    <Link
-      href={href}
-      className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
-    >
+    <Link href={href} className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]}`}>
       {children}
     </Link>
   );

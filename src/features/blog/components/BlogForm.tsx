@@ -8,7 +8,7 @@ import { Card, CardBody } from '@/components/ui/Card';
 import type { Blog } from '@/types/blog';
 import type { ActionState } from '@/types/action';
 
-type BlogFormProps = {
+type Props = {
   action: (prevState: ActionState, formData: FormData) => Promise<ActionState>;
   blog?: Blog;
   submitLabel: string;
@@ -19,7 +19,7 @@ const initialState = {
   error: undefined,
 };
 
-export function BlogForm({ action, blog, submitLabel }: BlogFormProps) {
+export function BlogForm({ action, blog, submitLabel }: Props) {
   const [state, formAction] = useActionState(action, initialState);
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-type ContainerProps = {
+type Props = {
   children: React.ReactNode;
   className?: string;
   maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | 'full';
@@ -15,12 +15,12 @@ const maxWidthClasses = {
   full: 'max-w-full',
 };
 
-export function Container({ children, className = '', maxWidth }: ContainerProps) {
+export function Container({ children, maxWidth }: Props) {
   const maxWidthClass = maxWidth ? maxWidthClasses[maxWidth] : '';
   const containerClass = maxWidth ? `${maxWidthClass} mx-auto` : '';
 
   return (
-    <main className={`container mx-auto px-4 py-8 ${className}`}>
+    <main className="container mx-auto px-4 py-8">
       {maxWidth ? <div className={containerClass}>{children}</div> : children}
     </main>
   );

@@ -6,6 +6,7 @@ const meta = {
   component: Textarea,
   args: {
     name: 'textareaField',
+    label: 'テキストエリア',
     placeholder: '本文を入力してください',
     rows: 5,
   },

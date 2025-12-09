@@ -1,13 +1,12 @@
 'use client';
 
-type TextareaProps = {
+type Props = {
   name: string;
-  label?: string;
+  label: string;
   placeholder?: string;
   rows?: number;
   required?: boolean;
   defaultValue?: string;
-  className?: string;
 };
 
 export function Textarea({
@@ -17,10 +16,9 @@ export function Textarea({
   rows = 5,
   required = false,
   defaultValue,
-  className = '',
-}: TextareaProps) {
+}: Props) {
   return (
-    <div className={`mb-4 ${className}`}>
+    <div className="mb-4">
       {label && (
         <label htmlFor={name} className="block text-sm font-medium text-gray-700 mb-1">
           {label}

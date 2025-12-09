@@ -2,13 +2,12 @@
 
 import { useFormStatus } from 'react-dom';
 
-type ButtonProps = {
+type Props = {
   children: React.ReactNode;
   type?: 'button' | 'submit';
   variant?: 'primary' | 'secondary' | 'danger';
   onClick?: () => void;
   disabled?: boolean;
-  className?: string;
 };
 
 export function Button({
@@ -17,8 +16,7 @@ export function Button({
   variant = 'primary',
   onClick,
   disabled,
-  className = '',
-}: ButtonProps) {
+}: Props) {
   const { pending } = useFormStatus();
   const isDisabled = disabled || pending;
 
@@ -36,7 +34,7 @@ export function Button({
       type={type}
       onClick={onClick}
       disabled={isDisabled}
-      className={`${baseStyles} ${variantStyles[variant]} ${className}`}
+      className={`${baseStyles} ${variantStyles[variant]}`}
     >
       {pending ? '処理中...' : children}
     </button>

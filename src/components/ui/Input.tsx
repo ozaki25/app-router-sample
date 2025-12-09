@@ -1,13 +1,12 @@
 'use client';
 
-type InputProps = {
+type Props = {
   name: string;
   label?: string;
   type?: string;
   placeholder?: string;
   required?: boolean;
   defaultValue?: string;
-  className?: string;
 };
 
 export function Input({
@@ -17,10 +16,9 @@ export function Input({
   placeholder,
   required = false,
   defaultValue,
-  className = '',
-}: InputProps) {
+}: Props) {
   return (
-    <div className={`mb-4 ${className}`}>
+    <div className="mb-4">
       {label && (
         <label htmlFor={name} className="block text-sm font-medium text-gray-700 mb-1">
           {label}
