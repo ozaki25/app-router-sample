@@ -1,6 +1,6 @@
-import { FC } from 'react';
+import { FC, ImgHTMLAttributes } from 'react';
 
-interface Props extends React.ImgHTMLAttributes<HTMLImageElement> {
+interface Props extends ImgHTMLAttributes<HTMLImageElement> {
   src: string;
 }
 

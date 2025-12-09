@@ -1,6 +1,6 @@
 import { Header } from '@/components/layout/Header';
-import { Container } from '@/components/ui/Container';
 import { Card, CardBody } from '@/components/ui/Card';
+import { Container } from '@/components/ui/Container';
 import { LinkButton } from '@/components/ui/LinkButton';
 
 export default function NotFound() {

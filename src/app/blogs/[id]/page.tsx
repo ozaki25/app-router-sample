@@ -1,17 +1,17 @@
-import { notFound } from 'next/navigation';
-import { getById } from '@/repositories/blog';
-import { formatDate } from '@/libs/shared/date';
 import { Header } from '@/components/layout/Header';
-import { Container } from '@/components/ui/Container';
 import { Card, CardBody } from '@/components/ui/Card';
+import { Container } from '@/components/ui/Container';
 import { LinkButton } from '@/components/ui/LinkButton';
 import { DeleteButton } from '@/features/blog/components/DeleteButton';
+import { formatDate } from '@/libs/shared/date';
+import { getById } from '@/repositories/blog';
+import { notFound } from 'next/navigation';
 
-type PageProps = {
+type Props = {
   params: Promise<{ id: string }>;
 };
 
-export default async function BlogDetailPage({ params }: PageProps) {
+export default async function BlogDetailPage({ params }: Props) {
   const { id } = await params;
   const blog = await getById(id);
 

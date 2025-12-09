@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
 import { LinkButton } from './LinkButton';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 
 const meta = {
   title: 'UI/LinkButton',

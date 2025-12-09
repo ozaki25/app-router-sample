@@ -1,10 +1,10 @@
 'use server';
 
+import { blogSchema } from '@/features/blog/validations/blogValidation';
+import { update } from '@/repositories/blog';
+import { ActionState } from '@/types/action';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import { update } from '@/repositories/blog';
-import { blogSchema } from '@/features/blog/validations/blogValidation';
-import { ActionState } from '@/types/action';
 
 export async function updateBlog(
   id: string,
@@ -12,8 +12,8 @@ export async function updateBlog(
   formData: FormData
 ): Promise<ActionState> {
   try {
-    const title = formData.get('title') as string;
-    const content = formData.get('content') as string;
+    const title = formData.get('title');
+    const content = formData.get('content');
 
     const result = blogSchema.safeParse({ title, content });
     if (!result.success) {
@@ -23,7 +23,7 @@ export async function updateBlog(
       };
     }
 
-    await update({ id, title, content });
+    await update({ id, ...result.data });
 
     revalidatePath('/blogs');
     revalidatePath(`/blogs/${id}`);

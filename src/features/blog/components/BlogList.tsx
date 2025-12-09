@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import { Blog } from '@/types/blog';
-import { formatDate } from '@/libs/shared/date';
 import { Card, CardHeader, CardBody, CardFooter } from '@/components/ui/Card';
+import { formatDate } from '@/libs/shared/date';
+import { Blog } from '@/types/blog';
+import Link from 'next/link';
 
 type Props = {
   blogs: Blog[];

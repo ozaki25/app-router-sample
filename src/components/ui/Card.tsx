@@ -1,5 +1,7 @@
+import { ReactNode } from 'react';
+
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export function Card({ children }: Props) {
@@ -7,7 +9,7 @@ export function Card({ children }: Props) {
 }
 
 type CardHeaderProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export function CardHeader({ children }: CardHeaderProps) {
@@ -15,7 +17,7 @@ export function CardHeader({ children }: CardHeaderProps) {
 }
 
 type CardBodyProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export function CardBody({ children }: CardBodyProps) {
@@ -23,7 +25,7 @@ export function CardBody({ children }: CardBodyProps) {
 }
 
 type CardFooterProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export function CardFooter({ children }: CardFooterProps) {

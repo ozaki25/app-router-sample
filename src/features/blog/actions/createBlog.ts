@@ -1,18 +1,18 @@
 'use server';
 
+import { blogSchema } from '@/features/blog/validations/blogValidation';
+import { create } from '@/repositories/blog';
+import { ActionState } from '@/types/action';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import { create } from '@/repositories/blog';
-import { blogSchema } from '@/features/blog/validations/blogValidation';
-import { ActionState } from '@/types/action';
 
 export async function createBlog(
   _prevState: ActionState,
   formData: FormData
 ): Promise<ActionState> {
   try {
-    const title = formData.get('title') as string;
-    const content = formData.get('content') as string;
+    const title = formData.get('title');
+    const content = formData.get('content');
 
     const result = blogSchema.safeParse({ title, content });
     if (!result.success) {
@@ -22,7 +22,7 @@ export async function createBlog(
       };
     }
 
-    await create({ title, content });
+    await create(result.data);
 
     revalidatePath('/blogs');
   } catch (error) {

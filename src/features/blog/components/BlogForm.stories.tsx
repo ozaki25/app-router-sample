@@ -1,7 +1,7 @@
+import { BlogForm } from './BlogForm';
+import type { ActionState } from '@/types/action';
 import type { Meta, StoryObj } from '@storybook/nextjs';
 import { action } from 'storybook/actions';
-import type { ActionState } from '@/types/action';
-import { BlogForm } from './BlogForm';
 
 const mockAction = async (_prevState: ActionState, formData: FormData): Promise<ActionState> => {
   action('form-submit')(Object.fromEntries(formData));

@@ -1,16 +1,16 @@
-import { notFound } from 'next/navigation';
-import { getById } from '@/repositories/blog';
 import { Header } from '@/components/layout/Header';
-import { BlogForm } from '@/features/blog/components/BlogForm';
-import { updateBlog } from '@/features/blog/actions';
 import { Container } from '@/components/ui/Container';
 import { PageHeader } from '@/components/ui/PageHeader';
+import { updateBlog } from '@/features/blog/actions';
+import { BlogForm } from '@/features/blog/components/BlogForm';
+import { getById } from '@/repositories/blog';
+import { notFound } from 'next/navigation';
 
-type PageProps = {
+type Props = {
   params: Promise<{ id: string }>;
 };
 
-export default async function EditBlogPage({ params }: PageProps) {
+export default async function EditBlogPage({ params }: Props) {
   const { id } = await params;
   const blog = await getById(id);
 
@@ -18,7 +18,6 @@ export default async function EditBlogPage({ params }: PageProps) {
     notFound();
   }
 
-  // updateBlogをcurryingして現在のidを束縛
   const updateBlogWithId = updateBlog.bind(null, id);
 
   return (

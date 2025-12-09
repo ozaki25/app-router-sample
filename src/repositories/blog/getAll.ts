@@ -1,5 +1,5 @@
-import { Blog } from '@/types/blog';
 import { API_URL } from './config';
+import { Blog } from '@/types/blog';
 
 export async function getAll(): Promise<Blog[]> {
   const response = await fetch(API_URL, {

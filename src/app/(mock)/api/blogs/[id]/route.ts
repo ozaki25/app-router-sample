@@ -1,6 +1,6 @@
-import { NextResponse } from 'next/server';
 import { INITIAL_BLOGS } from '../data';
 import { Blog } from '@/types/blog';
+import { NextResponse } from 'next/server';
 
 // グローバルスコープでデータを共有
 const getBlogs = (): Blog[] => {
