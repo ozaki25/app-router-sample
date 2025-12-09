@@ -2,7 +2,7 @@ import { Header } from '@/components/layout/Header';
 import { Container } from '@/components/ui/Container';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { EditBlogForm } from '@/features/blog/components/EditBlogForm';
-import { getById } from '@/repositories/blog';
+import { getByIdBlogRepository } from '@/repositories/blog/getById';
 import { notFound } from 'next/navigation';
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
 
 export default async function EditBlogPage({ params }: Props) {
   const { id } = await params;
-  const blog = await getById(id);
+  const blog = await getByIdBlogRepository(id);
 
   if (!blog) {
     notFound();

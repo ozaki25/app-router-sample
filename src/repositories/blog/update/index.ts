@@ -9,7 +9,7 @@ type UpdateBlogInput = {
   content: string;
 };
 
-export async function update(input: UpdateBlogInput): Promise<Blog> {
+export async function updateBlogRepository(input: UpdateBlogInput): Promise<Blog> {
   const validatedInput = requestSchema.parse({
     title: input.title,
     content: input.content,

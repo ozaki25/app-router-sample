@@ -2,10 +2,10 @@ import { Header } from '@/components/layout/Header';
 import { Container } from '@/components/ui/Container';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { BlogList } from '@/features/blog/components/BlogList';
-import { getAll } from '@/repositories/blog';
+import { getAllBlogRepository } from '@/repositories/blog/getAll';
 
 export default async function BlogsPage() {
-  const blogs = await getAll();
+  const blogs = await getAllBlogRepository();
 
   return (
     <>

@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/Button';
-import { deleteBlog } from '@/features/blog/actions';
+import { deleteBlogAction } from '@/features/blog/actions/deleteBlog';
 import { useTransition } from 'react';
 
 type Props = {
@@ -17,7 +17,7 @@ export function DeleteButton({ blogId }: Props) {
     }
 
     startTransition(async () => {
-      const result = await deleteBlog(blogId);
+      const result = await deleteBlogAction(blogId);
       if (result.error) {
         alert(result.error);
       }

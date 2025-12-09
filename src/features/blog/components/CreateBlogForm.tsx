@@ -1,7 +1,7 @@
 'use client';
 
 import { BlogForm } from './BlogForm';
-import { createBlog } from '@/features/blog/actions';
+import { createBlogAction } from '@/features/blog/actions/createBlog';
 import { useActionState, useEffect } from 'react';
 
 const initialState = {
@@ -10,7 +10,7 @@ const initialState = {
 };
 
 export function CreateBlogForm() {
-  const [state, formAction, isPending] = useActionState(createBlog, initialState);
+  const [state, formAction, isPending] = useActionState(createBlogAction, initialState);
 
   useEffect(() => {
     if (state?.error) {

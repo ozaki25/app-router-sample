@@ -8,7 +8,7 @@ type CreateBlogInput = {
   content: string;
 };
 
-export async function create(input: CreateBlogInput): Promise<Blog> {
+export async function createBlogRepository(input: CreateBlogInput): Promise<Blog> {
   const validatedInput = requestSchema.parse(input);
   const requestBody = toApiRequest(validatedInput);
 

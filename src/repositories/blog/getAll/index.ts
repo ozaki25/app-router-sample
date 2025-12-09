@@ -3,7 +3,7 @@ import { API_URL } from '@/repositories/blog/config';
 import { Blog } from '@/types/blog';
 import { z } from 'zod';
 
-export async function getAll(): Promise<Blog[]> {
+export async function getAllBlogRepository(): Promise<Blog[]> {
   const response = await fetch(API_URL, {
     next: { tags: ['blogs'] },
   });

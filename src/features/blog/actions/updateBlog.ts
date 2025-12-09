@@ -1,12 +1,12 @@
 'use server';
 
 import { blogSchema } from '@/features/blog/validations/blogValidation';
-import { update } from '@/repositories/blog';
+import { updateBlogRepository } from '@/repositories/blog/update';
 import { ActionState } from '@/types/action';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 
-export async function updateBlog(
+export async function updateBlogAction(
   id: string,
   _prevState: ActionState,
   formData: FormData
@@ -23,7 +23,7 @@ export async function updateBlog(
       };
     }
 
-    await update({ id, ...result.data });
+    await updateBlogRepository({ id, ...result.data });
 
     revalidatePath('/blogs');
     revalidatePath(`/blogs/${id}`);

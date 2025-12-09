@@ -1,12 +1,12 @@
 'use server';
 
 import { blogSchema } from '@/features/blog/validations/blogValidation';
-import { create } from '@/repositories/blog';
+import { createBlogRepository } from '@/repositories/blog/create';
 import { ActionState } from '@/types/action';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 
-export async function createBlog(
+export async function createBlogAction(
   _prevState: ActionState,
   formData: FormData
 ): Promise<ActionState> {
@@ -22,7 +22,7 @@ export async function createBlog(
       };
     }
 
-    await create(result.data);
+    await createBlogRepository(result.data);
 
     revalidatePath('/blogs');
   } catch (error) {

@@ -2,7 +2,7 @@ import { responseSchema, toBlog } from './responseSchema';
 import { API_URL } from '@/repositories/blog/config';
 import { Blog } from '@/types/blog';
 
-export async function getById(id: string): Promise<Blog | null> {
+export async function getByIdBlogRepository(id: string): Promise<Blog | null> {
   const response = await fetch(`${API_URL}/${id}`, {
     next: { tags: ['blogs', `blog-${id}`] },
   });
