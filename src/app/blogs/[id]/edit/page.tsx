@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation';
-import { blogRepository } from '@/repositories/blogRepository';
+import { getById } from '@/repositories/blog';
 import { Header } from '@/components/layout/Header';
 import { BlogForm } from '@/features/blog/components/BlogForm';
-import { updateBlog } from '@/features/blog/actions/blogActions';
+import { updateBlog } from '@/features/blog/actions';
 import { Container } from '@/components/ui/Container';
 import { PageHeader } from '@/components/ui/PageHeader';
 
@@ -12,7 +12,7 @@ type PageProps = {
 
 export default async function EditBlogPage({ params }: PageProps) {
   const { id } = await params;
-  const blog = await blogRepository.getById(id);
+  const blog = await getById(id);
 
   if (!blog) {
     notFound();

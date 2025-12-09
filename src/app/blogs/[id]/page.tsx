@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { blogRepository } from '@/repositories/blogRepository';
+import { getById } from '@/repositories/blog';
 import { formatDate } from '@/libs/shared/utils';
 import { Header } from '@/components/layout/Header';
 import { Container } from '@/components/ui/Container';
@@ -13,7 +13,7 @@ type PageProps = {
 
 export default async function BlogDetailPage({ params }: PageProps) {
   const { id } = await params;
-  const blog = await blogRepository.getById(id);
+  const blog = await getById(id);
 
   if (!blog) {
     notFound();

@@ -2,16 +2,16 @@
 
 import { useTransition } from 'react';
 import { Button } from '@/components/ui/Button';
-import { deleteBlog } from '../actions/blogActions';
+import { deleteBlog } from '@/features/blog/actions';
 
-type DeleteButtonProps = {
+type Props = {
   blogId: string;
 };
 
-export function DeleteButton({ blogId }: DeleteButtonProps) {
+export function DeleteButton({ blogId }: Props) {
   const [isPending, startTransition] = useTransition();
 
-  const handleDelete = () => {
+  const onClick = () => {
     if (!confirm('本当に削除しますか?')) {
       return;
     }
@@ -25,7 +25,7 @@ export function DeleteButton({ blogId }: DeleteButtonProps) {
   };
 
   return (
-    <Button type="button" variant="danger" onClick={handleDelete} disabled={isPending}>
+    <Button type="button" variant="danger" onClick={onClick} disabled={isPending}>
       {isPending ? '削除中...' : '削除'}
     </Button>
   );

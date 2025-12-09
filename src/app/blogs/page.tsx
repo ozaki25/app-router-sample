@@ -1,11 +1,11 @@
-import { blogRepository } from '@/repositories/blogRepository';
+import { getAll } from '@/repositories/blog';
 import { BlogList } from '@/features/blog/components/BlogList';
 import { Header } from '@/components/layout/Header';
 import { Container } from '@/components/ui/Container';
 import { PageHeader } from '@/components/ui/PageHeader';
 
 export default async function BlogsPage() {
-  const blogs = await blogRepository.getAll();
+  const blogs = await getAll();
 
   return (
     <>

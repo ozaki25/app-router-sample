@@ -10,7 +10,7 @@ import type { Blog } from '@/libs/shared/types';
 type BlogFormProps = {
   action: (prevState: any, formData: FormData) => Promise<any>;
   blog?: Blog;
-  submitLabel?: string;
+  submitLabel: string;
 };
 
 const initialState = {
@@ -18,7 +18,7 @@ const initialState = {
   error: undefined,
 };
 
-export function BlogForm({ action, blog, submitLabel = '投稿' }: BlogFormProps) {
+export function BlogForm({ action, blog, submitLabel }: BlogFormProps) {
   const [state, formAction] = useActionState(action, initialState);
 
   useEffect(() => {
