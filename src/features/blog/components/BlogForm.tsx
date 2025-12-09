@@ -5,10 +5,10 @@ import { Input } from '@/components/ui/Input';
 import { Textarea } from '@/components/ui/Textarea';
 import { Button } from '@/components/ui/Button';
 import { Card, CardBody } from '@/components/ui/Card';
-import type { Blog } from '@/libs/shared/types';
+import type { Blog, ActionState } from '@/libs/shared/types';
 
 type BlogFormProps = {
-  action: (prevState: any, formData: FormData) => Promise<any>;
+  action: (prevState: ActionState, formData: FormData) => Promise<ActionState>;
   blog?: Blog;
   submitLabel: string;
 };
