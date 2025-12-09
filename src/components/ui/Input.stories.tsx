@@ -7,7 +7,6 @@ const meta = {
   args: {
     name: 'inputField',
     placeholder: 'テキストを入力してください',
-    type: 'text',
   },
 } satisfies Meta<typeof Input>;
 
@@ -30,16 +29,6 @@ export const WithValue: Story = {
   args: {
     label: 'サンプル入力',
     defaultValue: 'サンプルテキスト',
-  },
-};
-
-export const Email: Story = {
-  name: 'Emailタイプ',
-  args: {
-    name: 'email',
-    label: 'メールアドレス',
-    type: 'email',
-    placeholder: 'email@example.com',
   },
 };
 

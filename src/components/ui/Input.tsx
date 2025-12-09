@@ -3,20 +3,12 @@
 type Props = {
   name: string;
   label?: string;
-  type?: string;
   placeholder?: string;
   required?: boolean;
   defaultValue?: string;
 };
 
-export function Input({
-  name,
-  label,
-  type = 'text',
-  placeholder,
-  required = false,
-  defaultValue,
-}: Props) {
+export function Input({ name, label, placeholder, required = false, defaultValue }: Props) {
   return (
     <div className="mb-4">
       {label && (
@@ -26,7 +18,7 @@ export function Input({
         </label>
       )}
       <input
-        type={type}
+        type="text"
         id={name}
         name={name}
         placeholder={placeholder}
