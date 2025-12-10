@@ -1,4 +1,5 @@
 import { INITIAL_BLOGS } from './data';
+import { PAGE_SIZE } from '@/constants/pagination';
 import { Blog } from '@/types/blog';
 import { NextResponse } from 'next/server';
 
@@ -12,16 +13,37 @@ const getBlogs = (): Blog[] => {
   return (global as any).blogsData as Blog[];
 };
 
-export async function GET() {
+export async function GET(request: Request) {
   await new Promise((resolve) => setTimeout(resolve, 500));
+  const { searchParams } = new URL(request.url);
+  const page = Number(searchParams.get('page')) || 1;
+
   const blogs = getBlogs();
-  const response = blogs.map((blog) => ({
-    id: blog.id,
-    title: blog.title,
-    content: blog.content,
-    created_at: blog.createdAt,
-    updated_at: blog.updatedAt,
-  }));
+  const total = blogs.length;
+  const totalPages = Math.ceil(total / PAGE_SIZE);
+
+  // 不正なページ番号の場合は404を返す
+  if (page < 1 || page > totalPages) {
+    return NextResponse.json({ error: 'Page not found' }, { status: 404 });
+  }
+
+  const startIndex = (page - 1) * PAGE_SIZE;
+  const endIndex = startIndex + PAGE_SIZE;
+  const paginatedBlogs = blogs.slice(startIndex, endIndex);
+
+  const response = {
+    total,
+    total_pages: totalPages,
+    current_page: page,
+    data: paginatedBlogs.map((blog) => ({
+      id: blog.id,
+      title: blog.title,
+      content: blog.content,
+      created_at: blog.createdAt,
+      updated_at: blog.updatedAt,
+    })),
+  };
+
   return NextResponse.json(response);
 }
 
