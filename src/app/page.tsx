@@ -54,6 +54,13 @@ export default function Home() {
             ブログ一覧を見る
           </LinkButton>
         </div>
+
+        <div className="flex justify-end items-centermt-8 mt-8">
+          <div className="flex gap-4 p-2 bg-[#81878d]">
+            <img src="/next.png" alt="Next.js PNG" height={24} width={120} className="block" />
+            <img src="/next.svg" alt="Next.js SVG" height={24} width={120} className="block" />
+          </div>
+        </div>
       </Container>
     </>
   );

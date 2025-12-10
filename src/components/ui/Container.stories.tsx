@@ -1,5 +1,5 @@
 import { Container } from './Container';
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 const meta = {
   title: 'UI/Container',
