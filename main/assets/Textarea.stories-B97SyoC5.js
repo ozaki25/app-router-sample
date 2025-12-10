@@ -1,4 +1,4 @@
-import{T as n}from"./Textarea-CHcZVOtf.js";import"./jsx-runtime-C4zCDkLe.js";import"./iframe-BEZgAVHD.js";import"./preload-helper-PPVm8Dsz.js";const u={title:"UI/Textarea",component:n,args:{name:"textareaField",label:"テキストエリア",placeholder:"本文を入力してください",rows:5}},e={name:"デフォルト"},a={name:"ラベルあり",args:{label:"本文"}},r={name:"初期値あり",args:{label:"投稿内容",defaultValue:`これはサンプルテキストです。
+import{T as n}from"./Textarea-BiiXlcYm.js";import"./jsx-runtime-BExSnzUr.js";import"./iframe-CTaZlYBk.js";import"./preload-helper-PPVm8Dsz.js";const u={title:"UI/Textarea",component:n,args:{name:"textareaField",label:"テキストエリア",placeholder:"本文を入力してください",rows:5}},e={name:"デフォルト"},a={name:"ラベルあり",args:{label:"本文"}},r={name:"初期値あり",args:{label:"投稿内容",defaultValue:`これはサンプルテキストです。
 複数行にわたる内容を入力できます。`}},s={name:"大きいテキストエリア",args:{label:"詳細説明",rows:10}},o={name:"必須フィールド",args:{label:"コメント",required:!0}};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
   name: 'デフォルト'
 }`,...e.parameters?.docs?.source}}};a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`{
