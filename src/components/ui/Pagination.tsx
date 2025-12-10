@@ -68,9 +68,9 @@ export function Pagination({ currentPage, totalPages }: Props) {
           page === 'ellipsis' ? (
             <Ellipsis key={`ellipsis-${index}`} />
           ) : page === currentPage ? (
-            <CurrentPage page={page} key={page} />
+            <CurrentPage key={page} page={page} />
           ) : (
-            <ActiveButton nextPage={page} text={String(page)} />
+            <ActiveButton key={page} nextPage={page} text={String(page)} />
           )
         )}
       </div>
