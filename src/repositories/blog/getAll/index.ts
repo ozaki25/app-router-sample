@@ -1,10 +1,9 @@
-import { responseSchema, toBlog } from './responseSchema';
+import { responseSchema, toPaginatedBlogs } from './responseSchema';
 import { API_URL } from '@/repositories/blog/config';
-import { Blog } from '@/types/blog';
-import { z } from 'zod';
+import { PaginatedBlogs } from '@/types/blog';
 
-export async function getAllBlogRepository(): Promise<Blog[]> {
-  const response = await fetch(API_URL, {
+export async function getAllBlogRepository(page: number = 1): Promise<PaginatedBlogs> {
+  const response = await fetch(`${API_URL}?page=${page}`, {
     cache: 'no-store',
     next: { tags: ['blogs'] },
   });
@@ -13,6 +12,6 @@ export async function getAllBlogRepository(): Promise<Blog[]> {
   }
 
   const data = await response.json();
-  const validated = z.array(responseSchema).parse(data);
-  return validated.map(toBlog);
+  const validated = responseSchema.parse(data);
+  return toPaginatedBlogs(validated);
 }

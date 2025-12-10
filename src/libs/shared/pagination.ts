@@ -34,9 +34,7 @@ export function generatePageNumbers(
   }
 
   // 最後のページは常に表示
-  if (totalPages > 1) {
-    pages.push(totalPages);
-  }
+  pages.push(totalPages);
 
   return pages;
 }

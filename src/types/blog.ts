@@ -5,3 +5,10 @@ export type Blog = {
   createdAt: string;
   updatedAt: string;
 };
+
+export type PaginatedBlogs = {
+  total: number;
+  totalPages: number;
+  currentPage: number;
+  blogs: Blog[];
+};
