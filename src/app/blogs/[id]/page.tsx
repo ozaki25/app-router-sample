@@ -1,4 +1,3 @@
-import { Header } from '@/components/layout/Header';
 import { Container } from '@/components/ui/Container';
 import { BlogDetail } from '@/features/blog/components/BlogDetail';
 import { getByIdBlogRepository } from '@/repositories/blog/getById';
@@ -17,11 +16,8 @@ export default async function BlogDetailPage({ params }: Props) {
   }
 
   return (
-    <>
-      <Header />
-      <Container maxWidth="3xl">
-        <BlogDetail blog={blog} />
-      </Container>
-    </>
+    <Container maxWidth="3xl">
+      <BlogDetail blog={blog} />
+    </Container>
   );
 }

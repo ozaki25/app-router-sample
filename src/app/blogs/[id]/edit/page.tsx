@@ -1,4 +1,3 @@
-import { Header } from '@/components/layout/Header';
 import { Container } from '@/components/ui/Container';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { EditBlogForm } from '@/features/blog/components/EditBlogForm';
@@ -18,12 +17,9 @@ export default async function EditBlogPage({ params }: Props) {
   }
 
   return (
-    <>
-      <Header />
-      <Container maxWidth="2xl">
-        <PageHeader title="ブログ編集" description="ブログ記事の内容を編集します" />
-        <EditBlogForm blog={blog} />
-      </Container>
-    </>
+    <Container maxWidth="2xl">
+      <PageHeader title="ブログ編集" description="ブログ記事の内容を編集します" />
+      <EditBlogForm blog={blog} />
+    </Container>
   );
 }
