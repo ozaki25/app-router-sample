@@ -1,4 +1,4 @@
-import{I as t}from"./Input-BV7sSxoG.js";import"./jsx-runtime-BExSnzUr.js";import"./iframe-CTaZlYBk.js";import"./preload-helper-PPVm8Dsz.js";const l={title:"UI/Input",component:t,args:{name:"inputField",placeholder:"テキストを入力してください"}},e={name:"デフォルト"},a={name:"ラベルあり",args:{label:"入力フィールド"}},r={name:"初期値あり",args:{label:"サンプル入力",defaultValue:"サンプルテキスト"}},s={name:"必須フィールド",args:{label:"ユーザー名",required:!0}};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
+import{I as t}from"./Input-DShIeBcL.js";import"./jsx-runtime-OPYKKYw8.js";import"./iframe-GZEhjyqc.js";import"./preload-helper-PPVm8Dsz.js";const l={title:"UI/Input",component:t,args:{name:"inputField",placeholder:"テキストを入力してください"}},e={name:"デフォルト"},a={name:"ラベルあり",args:{label:"入力フィールド"}},r={name:"初期値あり",args:{label:"サンプル入力",defaultValue:"サンプルテキスト"}},s={name:"必須フィールド",args:{label:"ユーザー名",required:!0}};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
   name: 'デフォルト'
 }`,...e.parameters?.docs?.source}}};a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`{
   name: 'ラベルあり',

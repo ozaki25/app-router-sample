@@ -1,4 +1,4 @@
-import{B as s}from"./Button-BAK2lJQ4.js";import"./jsx-runtime-BExSnzUr.js";import"./iframe-CTaZlYBk.js";import"./preload-helper-PPVm8Dsz.js";const{action:o}=__STORYBOOK_MODULE_ACTIONS__,d={title:"UI/Button",component:s,args:{children:"ボタン",variant:"primary",onClick:o("click")}},r={name:"Primaryボタン",args:{variant:"primary"}},a={name:"Secondaryボタン",args:{variant:"secondary"}},e={name:"Dangerボタン",args:{variant:"danger"}},n={name:"disabledなボタン",args:{disabled:!0}};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:`{
+import{B as s}from"./Button-BrNCooyp.js";import"./jsx-runtime-OPYKKYw8.js";import"./iframe-GZEhjyqc.js";import"./preload-helper-PPVm8Dsz.js";const{action:o}=__STORYBOOK_MODULE_ACTIONS__,d={title:"UI/Button",component:s,args:{children:"ボタン",variant:"primary",onClick:o("click")}},r={name:"Primaryボタン",args:{variant:"primary"}},a={name:"Secondaryボタン",args:{variant:"secondary"}},e={name:"Dangerボタン",args:{variant:"danger"}},n={name:"disabledなボタン",args:{disabled:!0}};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:`{
   name: 'Primaryボタン',
   args: {
     variant: 'primary'
