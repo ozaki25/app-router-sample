@@ -1,0 +1,3 @@
+export const PAGE_SIZE = 4;
+export const PAGINATION_ELLIPSIS_THRESHOLD = 7;
+export const PAGINATION_SIBLING_COUNT = 1;
