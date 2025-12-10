@@ -2,6 +2,7 @@ import { Header } from '@/components/layout/Header';
 import { Card, CardHeader, CardBody } from '@/components/ui/Card';
 import { Container } from '@/components/ui/Container';
 import { LinkButton } from '@/components/ui/LinkButton';
+import { NextLogo } from '@/components/ui/NextLogo';
 import { PageHeader } from '@/components/ui/PageHeader';
 
 export default function Home() {
@@ -53,6 +54,10 @@ export default function Home() {
           <LinkButton href="/blogs" variant="primary" size="lg">
             ブログ一覧を見る
           </LinkButton>
+        </div>
+
+        <div className="flex justify-end items-center mt-8">
+          <NextLogo />
         </div>
       </Container>
     </>
