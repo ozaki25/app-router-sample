@@ -1,4 +1,4 @@
-import{L as n}from"./LinkButton-CB2S10oK.js";import"./jsx-runtime-1LN5D7Kx.js";import"./iframe-CBE4tfgm.js";import"./preload-helper-PPVm8Dsz.js";import"./link-BrGH3hWB.js";const i={title:"UI/LinkButton",component:n,args:{href:"/blogs",children:"リンクボタン",variant:"primary"}},r={name:"Primaryリンクボタン",args:{variant:"primary"}},a={name:"Secondaryリンクボタン",args:{variant:"secondary"}},e={name:"外部リンク",args:{href:"https://example.com",children:"外部サイトへ"}};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:`{
+import{L as n}from"./LinkButton-Bzs_wQ4W.js";import"./jsx-runtime-BOpI73Ev.js";import"./iframe-DIcU02cL.js";import"./preload-helper-PPVm8Dsz.js";import"./link-pN9vzz5E.js";const i={title:"UI/LinkButton",component:n,args:{href:"/blogs",children:"リンクボタン",variant:"primary"}},r={name:"Primaryリンクボタン",args:{variant:"primary"}},a={name:"Secondaryリンクボタン",args:{variant:"secondary"}},e={name:"外部リンク",args:{href:"https://example.com",children:"外部サイトへ"}};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:`{
   name: 'Primaryリンクボタン',
   args: {
     variant: 'primary'
