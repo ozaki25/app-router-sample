@@ -2,8 +2,8 @@ import { Header } from '@/components/layout/Header';
 import { Card, CardHeader, CardBody } from '@/components/ui/Card';
 import { Container } from '@/components/ui/Container';
 import { LinkButton } from '@/components/ui/LinkButton';
+import { NextLogo } from '@/components/ui/NextLogo';
 import { PageHeader } from '@/components/ui/PageHeader';
-import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -56,11 +56,8 @@ export default function Home() {
           </LinkButton>
         </div>
 
-        <div className="flex justify-end items-centermt-8 mt-8">
-          <div className="flex gap-4 p-2 bg-[#81878d]">
-            <Image src="/next.png" alt="Next.js PNG" height={24} width={120} className="block" />
-            <Image src="/next.svg" alt="Next.js SVG" height={24} width={120} className="block" />
-          </div>
+        <div className="flex justify-end items-center mt-8">
+          <NextLogo />
         </div>
       </Container>
     </>
