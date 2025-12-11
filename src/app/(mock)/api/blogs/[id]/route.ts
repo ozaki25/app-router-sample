@@ -13,7 +13,7 @@ const getBlogs = (): Blog[] => {
 };
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  await new Promise((resolve) => setTimeout(resolve, 200));
   const { id } = await params;
   const blogs = getBlogs();
   const blog = blogs.find((b) => b.id === id);
@@ -32,7 +32,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
 }
 
 export async function PUT(request: Request, { params }: { params: Promise<{ id: string }> }) {
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  await new Promise((resolve) => setTimeout(resolve, 200));
   const { id } = await params;
   const body = await request.json();
   const blogs = getBlogs();
@@ -61,7 +61,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
 }
 
 export async function DELETE(_request: Request, { params }: { params: Promise<{ id: string }> }) {
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  await new Promise((resolve) => setTimeout(resolve, 200));
   const { id } = await params;
   const blogs = getBlogs();
 

@@ -14,7 +14,7 @@ const getBlogs = (): Blog[] => {
 };
 
 export async function GET(request: Request) {
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  await new Promise((resolve) => setTimeout(resolve, 200));
   const { searchParams } = new URL(request.url);
   const page = Number(searchParams.get('page')) || 1;
 
@@ -48,7 +48,7 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  await new Promise((resolve) => setTimeout(resolve, 200));
   const body = await request.json();
   const blogs = getBlogs();
 
