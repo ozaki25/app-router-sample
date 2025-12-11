@@ -1,6 +1,6 @@
 import { CommentSection } from './CommentSection';
 import { PaginatedComments } from '@/types/comment';
-import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 
 const meta = {
   title: 'Features/Comment/CommentSection',

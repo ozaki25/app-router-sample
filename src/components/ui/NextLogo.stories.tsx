@@ -1,5 +1,5 @@
 import { NextLogo } from './NextLogo';
-import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 
 const meta = {
   title: 'UI/NextLogo',

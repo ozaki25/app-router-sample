@@ -1,5 +1,5 @@
 import { CommentList } from './CommentList';
-import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { action } from 'storybook/actions';
 
 const meta = {

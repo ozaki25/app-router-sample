@@ -1,5 +1,5 @@
 import { PaginationInfo } from './PaginationInfo';
-import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 
 const meta = {
   title: 'UI/PaginationInfo',
