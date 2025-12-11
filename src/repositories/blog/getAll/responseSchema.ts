@@ -9,6 +9,8 @@ const blogResponseSchema = z.object({
   updated_at: z.string(),
 });
 
+export type BlogResponse = z.infer<typeof blogResponseSchema>;
+
 export const responseSchema = z.object({
   total: z.number(),
   total_pages: z.number(),
@@ -16,7 +18,7 @@ export const responseSchema = z.object({
   data: z.array(blogResponseSchema),
 });
 
-export type Response = z.infer<typeof responseSchema>;
+export type PaginatedBlogsResponse = z.infer<typeof responseSchema>;
 
 export const toBlog = (data: z.infer<typeof blogResponseSchema>): Blog => ({
   id: data.id,
@@ -26,7 +28,7 @@ export const toBlog = (data: z.infer<typeof blogResponseSchema>): Blog => ({
   updatedAt: data.updated_at,
 });
 
-export const toPaginatedBlogs = (data: Response): PaginatedBlogs => ({
+export const toPaginatedBlogs = (data: PaginatedBlogsResponse): PaginatedBlogs => ({
   total: data.total,
   totalPages: data.total_pages,
   currentPage: data.current_page,
