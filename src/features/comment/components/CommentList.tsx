@@ -31,8 +31,8 @@ export function CommentList({
   initialTotalPages,
 }: Props) {
   const [comments, setComments] = useState<Comment[]>(initialComments);
-  const [currentPage, setCurrentPage] = useState(initialCurrentPage);
-  const [totalPages, setTotalPages] = useState(initialTotalPages);
+  const [currentPage, setCurrentPage] = useState<number>(initialCurrentPage);
+  const [totalPages, setTotalPages] = useState<number>(initialTotalPages);
   const [isPending, startTransition] = useTransition();
 
   const onPageChange = (page: number) => {
