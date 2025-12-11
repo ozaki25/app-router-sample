@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { action } from 'storybook/actions';
 
 const meta = {
-  title: 'Features/Blog/BlogFormUI',
+  title: 'Features/Blog/BlogForm',
   component: BlogForm,
   args: {
     formAction: (formData: FormData) => {
