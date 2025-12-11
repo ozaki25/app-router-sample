@@ -4,9 +4,6 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 const meta = {
   title: 'Features/Comment/CommentList',
   component: CommentList,
-  parameters: {
-    layout: 'padded',
-  },
 } satisfies Meta<typeof CommentList>;
 
 export default meta;
