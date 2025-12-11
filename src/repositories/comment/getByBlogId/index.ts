@@ -3,7 +3,7 @@ import { API_BASE_URL } from '@/constants/api';
 import { Comment } from '@/types/comment';
 
 export async function getCommentsByBlogIdRepository(blogId: string): Promise<Comment[]> {
-  const response = await fetch(`${API_BASE_URL}/blogs/${blogId}/comments`, {
+  const response = await fetch(`${API_BASE_URL}/api/blogs/${blogId}/comments`, {
     cache: 'no-store',
   });
 
