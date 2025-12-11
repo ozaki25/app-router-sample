@@ -36,6 +36,9 @@ const preview: Preview = {
         createComment: createCommentSuccess(),
       },
     },
+    nextjs: {
+      appDirectory: true,
+    },
   },
   loaders: [mswLoader],
 };
