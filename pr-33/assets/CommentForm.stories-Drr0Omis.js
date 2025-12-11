@@ -1,0 +1,3 @@
+import{C as t}from"./CommentForm-T7KPYSBD.js";import"./jsx-runtime-B75TxpPN.js";import"./iframe-YtKlQRst.js";import"./preload-helper-PPVm8Dsz.js";import"./Button-CBDKTJk1.js";import"./Card-CjBciRyx.js";import"./Textarea-dcCT-OZU.js";import"./api-BExOi0Us.js";const{action:e}=__STORYBOOK_MODULE_ACTIONS__,d={title:"Features/Comment/CommentForm",component:t,args:{blogId:"1",onPosted:e("onPosted")}},o={name:"通常状態"};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`{
+  name: '通常状態'
+}`,...o.parameters?.docs?.source}}};const _=["Default"];export{o as Default,_ as __namedExportsOrder,d as default};
