@@ -3,7 +3,6 @@
 import { commentSchema } from '@/features/comment/validations/commentValidation';
 import { createCommentRepository } from '@/repositories/comment/create';
 import { ActionState } from '@/types/action';
-import { revalidatePath } from 'next/cache';
 
 export async function createCommentAction(
   blogId: string,
@@ -22,8 +21,6 @@ export async function createCommentAction(
     }
 
     await createCommentRepository({ blogId, content: result.data.content });
-
-    revalidatePath(`/blogs/${blogId}`);
 
     return {
       success: true,

@@ -4,3 +4,10 @@ export type Comment = {
   content: string;
   createdAt: string;
 };
+
+export type PaginatedComments = {
+  total: number;
+  totalPages: number;
+  currentPage: number;
+  comments: Comment[];
+};

@@ -1,10 +1,8 @@
-'use client';
-
 import { Button } from '@/components/ui/Button';
 import { Card, CardBody } from '@/components/ui/Card';
 import { Textarea } from '@/components/ui/Textarea';
 import { createCommentAction } from '@/features/comment/actions/createComment';
-import { useActionState, useEffect } from 'react';
+import { useActionState, useEffect, useEffectEvent } from 'react';
 
 const initialState = {
   success: false,
@@ -13,17 +11,25 @@ const initialState = {
 
 type Props = {
   blogId: string;
+  onPosted: () => void;
 };
 
-export function CommentForm({ blogId }: Props) {
+export function CommentForm({ blogId, onPosted }: Props) {
   const [state, formAction, isPending] = useActionState(
     createCommentAction.bind(null, blogId),
     initialState
   );
 
+  const onSuccess = useEffectEvent(() => {
+    onPosted();
+  });
+
   useEffect(() => {
     if (state?.error) {
       alert(state.error);
+    }
+    if (state?.success) {
+      onSuccess();
     }
   }, [state]);
 

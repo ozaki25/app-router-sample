@@ -1,18 +1,51 @@
+'use client';
+
+import { getComments } from '../actions/getComments';
 import { CommentForm } from './CommentForm';
 import { CommentList } from './CommentList';
-import type { Comment } from '@/types/comment';
+import type { PaginatedComments } from '@/types/comment';
+import { useState, useTransition } from 'react';
 
 type Props = {
   blogId: string;
-  comments: Comment[];
+  initialPaginatedComments: PaginatedComments;
 };
 
-export function CommentSection({ blogId, comments }: Props) {
+export function CommentSection({ blogId, initialPaginatedComments }: Props) {
+  const [paginatedComments, setPaginatedComments] =
+    useState<PaginatedComments>(initialPaginatedComments);
+  const [isPending, startTransition] = useTransition();
+
+  const fetchComments = (page: number) => {
+    startTransition(async () => {
+      const result = await getComments(blogId, page);
+      if (result.success) {
+        setPaginatedComments(result.data);
+      } else {
+        alert(result.error);
+      }
+    });
+  };
+
+  const onChangePage = (page: number) => {
+    fetchComments(page);
+  };
+
+  const onPosted = () => {
+    fetchComments(paginatedComments.currentPage);
+  };
+
   return (
-    <section className="mt-12 flex flex-col gap-4">
+    <section className="pt-8 flex flex-col gap-8">
       <h2 className="text-2xl font-bold">コメント</h2>
-      <CommentList comments={comments} />
-      <CommentForm blogId={blogId} />
+      <CommentList
+        comments={paginatedComments.comments}
+        currentPage={paginatedComments.currentPage}
+        totalPages={paginatedComments.totalPages}
+        isPending={isPending}
+        onChangePage={onChangePage}
+      />
+      <CommentForm blogId={blogId} onPosted={onPosted} />
     </section>
   );
 }

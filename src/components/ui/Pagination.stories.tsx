@@ -1,5 +1,6 @@
 import { Pagination } from './Pagination';
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import { action } from 'storybook/actions';
 
 const meta = {
   title: 'UI/Pagination',
@@ -62,5 +63,14 @@ export const SinglePage: Story = {
   args: {
     currentPage: 1,
     totalPages: 1,
+  },
+};
+
+export const WithonChangePage: Story = {
+  name: 'ボタンの場合',
+  args: {
+    currentPage: 2,
+    totalPages: 5,
+    onChangePage: action('onChangePage'),
   },
 };

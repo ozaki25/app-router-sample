@@ -4,9 +4,21 @@ import Link from 'next/link';
 type ActiveButtonProps = {
   nextPage: number;
   text: string;
+  onChangePage?: (page: number) => void;
 };
 
-function ActiveButton({ nextPage, text }: ActiveButtonProps) {
+function ActiveButton({ nextPage, text, onChangePage }: ActiveButtonProps) {
+  if (onChangePage) {
+    return (
+      <button
+        onClick={() => onChangePage(nextPage)}
+        className="px-3 py-2 rounded border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+        {text}
+      </button>
+    );
+  }
+
   return (
     <Link
       href={`/blogs?page=${nextPage}`}
@@ -49,9 +61,10 @@ function CurrentPage({ page }: CurrentPageProps) {
 type Props = {
   currentPage: number;
   totalPages: number;
+  onChangePage?: (page: number) => void;
 };
 
-export function Pagination({ currentPage, totalPages }: Props) {
+export function Pagination({ currentPage, totalPages, onChangePage }: Props) {
   const pages = generatePageNumbers(currentPage, totalPages);
   const hasPrevious = currentPage > 1;
   const hasNext = currentPage < totalPages;
@@ -59,7 +72,7 @@ export function Pagination({ currentPage, totalPages }: Props) {
   return (
     <nav aria-label="ページネーション" className="flex items-center justify-center gap-2">
       {hasPrevious ? (
-        <ActiveButton nextPage={currentPage - 1} text="前へ" />
+        <ActiveButton nextPage={currentPage - 1} text="前へ" onChangePage={onChangePage} />
       ) : (
         <DisabledButton text="前へ" />
       )}
@@ -70,12 +83,17 @@ export function Pagination({ currentPage, totalPages }: Props) {
           ) : page === currentPage ? (
             <CurrentPage key={page} page={page} />
           ) : (
-            <ActiveButton key={page} nextPage={page} text={String(page)} />
+            <ActiveButton
+              key={page}
+              nextPage={page}
+              text={String(page)}
+              onChangePage={onChangePage}
+            />
           )
         )}
       </div>
       {hasNext ? (
-        <ActiveButton nextPage={currentPage + 1} text="次へ" />
+        <ActiveButton nextPage={currentPage + 1} text="次へ" onChangePage={onChangePage} />
       ) : (
         <DisabledButton text="次へ" />
       )}
