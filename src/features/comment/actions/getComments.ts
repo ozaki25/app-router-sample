@@ -12,9 +12,10 @@ export async function getComments(
     const data = await getCommentsByBlogIdRepository(blogId, page);
     return { success: true, data };
   } catch (error) {
+    console.error('Failed to get comments:', error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : 'コメントの取得に失敗しました',
+      error: 'コメントの取得に失敗しました',
     };
   }
 }
