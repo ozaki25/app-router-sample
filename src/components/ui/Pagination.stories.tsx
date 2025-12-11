@@ -66,11 +66,11 @@ export const SinglePage: Story = {
   },
 };
 
-export const WithOnPageChange: Story = {
+export const WithonChangePage: Story = {
   name: 'ボタンの場合',
   args: {
     currentPage: 2,
     totalPages: 5,
-    onPageChange: action('onPageChange'),
+    onChangePage: action('onChangePage'),
   },
 };

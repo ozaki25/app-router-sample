@@ -1,11 +1,13 @@
 import { CommentForm } from './CommentForm';
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import { action } from 'storybook/actions';
 
 const meta = {
   title: 'Features/Comment/CommentForm',
   component: CommentForm,
   args: {
     blogId: '1',
+    onPosted: action('onPosted'),
   },
 } satisfies Meta<typeof CommentForm>;
 

@@ -1,11 +1,7 @@
-'use client';
-
-import { getComments } from '../actions/getComments';
 import { Card, CardBody } from '@/components/ui/Card';
 import { Pagination } from '@/components/ui/Pagination';
 import { formatDate } from '@/libs/shared/date';
 import type { Comment } from '@/types/comment';
-import { useState, useTransition } from 'react';
 
 function Empty() {
   return (
@@ -18,36 +14,14 @@ function Empty() {
 }
 
 type Props = {
-  blogId: string;
-  initialComments: Comment[];
-  initialCurrentPage: number;
-  initialTotalPages: number;
+  comments: Comment[];
+  currentPage: number;
+  totalPages: number;
+  isPending: boolean;
+  onChangePage: (page: number) => void;
 };
 
-export function CommentList({
-  blogId,
-  initialComments,
-  initialCurrentPage,
-  initialTotalPages,
-}: Props) {
-  const [comments, setComments] = useState<Comment[]>(initialComments);
-  const [currentPage, setCurrentPage] = useState<number>(initialCurrentPage);
-  const [totalPages, setTotalPages] = useState<number>(initialTotalPages);
-  const [isPending, startTransition] = useTransition();
-
-  const onPageChange = (page: number) => {
-    startTransition(async () => {
-      const result = await getComments(blogId, page);
-      if (result.success) {
-        setComments(result.data.comments);
-        setCurrentPage(result.data.currentPage);
-        setTotalPages(result.data.totalPages);
-      } else {
-        alert(result.error);
-      }
-    });
-  };
-
+export function CommentList({ comments, currentPage, totalPages, isPending, onChangePage }: Props) {
   if (comments.length === 0) {
     return <Empty />;
   }
@@ -69,7 +43,7 @@ export function CommentList({
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
-            onPageChange={onPageChange}
+            onChangePage={onChangePage}
           />
         </div>
       )}

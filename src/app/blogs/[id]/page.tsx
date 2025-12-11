@@ -17,12 +17,12 @@ export default async function BlogDetailPage({ params }: Props) {
     notFound();
   }
 
-  const comments = await getCommentsByBlogIdRepository(id);
+  const paginatedComments = await getCommentsByBlogIdRepository(id);
 
   return (
     <Container maxWidth="3xl">
       <BlogDetail blog={blog} />
-      <CommentSection blogId={id} comments={comments} />
+      <CommentSection blogId={id} initialPaginatedComments={paginatedComments} />
     </Container>
   );
 }
