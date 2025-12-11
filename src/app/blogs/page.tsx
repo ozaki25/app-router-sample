@@ -4,18 +4,12 @@ import { Pagination } from '@/components/ui/Pagination';
 import { PaginationInfo } from '@/components/ui/PaginationInfo';
 import { BlogList } from '@/features/blog/components/BlogList';
 import { getAllBlogRepository } from '@/repositories/blog/getAll';
-import { notFound, redirect } from 'next/navigation';
+import { notFound } from 'next/navigation';
 
 export default async function BlogsPage({ searchParams }: PageProps<'/blogs'>) {
   const params = await searchParams;
   const pageParam = params.page;
-
-  // ページ番号が未指定の場合は?page=1にリダイレクト
-  if (!pageParam) {
-    redirect('/blogs?page=1');
-  }
-
-  const page = Number(pageParam);
+  const page = pageParam ? Number(pageParam) : 1;
 
   // ページ番号が不正な場合は404
   if (isNaN(page) || page < 1) {
