@@ -8,6 +8,8 @@ const commentResponseSchema = z.object({
   created_at: z.string(),
 });
 
+export type CommentResponse = z.infer<typeof commentResponseSchema>;
+
 export const responseSchema = z.object({
   total: z.number(),
   total_pages: z.number(),
@@ -15,7 +17,7 @@ export const responseSchema = z.object({
   data: z.array(commentResponseSchema),
 });
 
-export type Response = z.infer<typeof responseSchema>;
+export type PaginatedCommentsResponse = z.infer<typeof responseSchema>;
 
 export const toComment = (data: z.infer<typeof commentResponseSchema>): Comment => ({
   id: data.id,
@@ -24,7 +26,7 @@ export const toComment = (data: z.infer<typeof commentResponseSchema>): Comment 
   createdAt: data.created_at,
 });
 
-export const toPaginatedComments = (data: Response): PaginatedComments => ({
+export const toPaginatedComments = (data: PaginatedCommentsResponse): PaginatedComments => ({
   total: data.total,
   totalPages: data.total_pages,
   currentPage: data.current_page,

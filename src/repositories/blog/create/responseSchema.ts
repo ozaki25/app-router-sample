@@ -9,9 +9,9 @@ export const responseSchema = z.object({
   updated_at: z.string(),
 });
 
-export type Response = z.infer<typeof responseSchema>;
+export type BlogResponse = z.infer<typeof responseSchema>;
 
-export const toBlog = (data: Response): Blog => ({
+export const toBlog = (data: BlogResponse): Blog => ({
   id: data.id,
   title: data.title,
   content: data.content,
