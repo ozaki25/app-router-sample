@@ -35,7 +35,7 @@ export function CommentList({
   const [totalPages, setTotalPages] = useState(initialTotalPages);
   const [isPending, startTransition] = useTransition();
 
-  const handlePageChange = (page: number) => {
+  const onPageChange = (page: number) => {
     startTransition(async () => {
       const result = await getComments(blogId, page);
       if (result.success) {
@@ -69,7 +69,7 @@ export function CommentList({
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
-            onPageChange={handlePageChange}
+            onPageChange={onPageChange}
           />
         </div>
       )}
