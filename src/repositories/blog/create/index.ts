@@ -1,6 +1,6 @@
 import { requestSchema, toApiRequest } from './requestSchema';
 import { responseSchema, toBlog } from './responseSchema';
-import { API_URL } from '@/repositories/blog/config';
+import { API_BASE_URL } from '@/constants/api';
 import { Blog } from '@/types/blog';
 
 type CreateBlogInput = {
@@ -12,7 +12,7 @@ export async function createBlogRepository(input: CreateBlogInput): Promise<Blog
   const validatedInput = requestSchema.parse(input);
   const requestBody = toApiRequest(validatedInput);
 
-  const response = await fetch(API_URL, {
+  const response = await fetch(`${API_BASE_URL}/blogs`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
