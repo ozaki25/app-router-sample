@@ -1,0 +1,3 @@
+import{j as r}from"./jsx-runtime-1Jf30tPh.js";import"./iframe-BJVYcx_L.js";import"./preload-helper-PPVm8Dsz.js";function t(){return r.jsx("div",{className:"flex items-center justify-center",role:"status","aria-label":"読み込み中",children:r.jsx("div",{className:"h-12 w-12 animate-spin rounded-full border-4 border-gray-300 border-t-blue-600"})})}t.__docgenInfo={description:"",methods:[],displayName:"Spinner"};const o={title:"UI/Spinner",component:t},e={name:"デフォルト"};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
+  name: 'デフォルト'
+}`,...e.parameters?.docs?.source}}};const i=["Default"];export{e as Default,i as __namedExportsOrder,o as default};
