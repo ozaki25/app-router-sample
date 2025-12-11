@@ -17,7 +17,7 @@ export default async function BlogDetailPage({ params }: Props) {
     notFound();
   }
 
-  const comments = await getCommentsByBlogIdRepository(id, 1);
+  const comments = await getCommentsByBlogIdRepository(id);
 
   return (
     <Container maxWidth="3xl">
