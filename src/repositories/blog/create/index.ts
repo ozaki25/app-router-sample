@@ -12,7 +12,7 @@ export async function createBlogRepository(input: CreateBlogInput): Promise<Blog
   const validatedInput = requestSchema.parse(input);
   const requestBody = toApiRequest(validatedInput);
 
-  const response = await fetch(`${API_BASE_URL}/blogs`, {
+  const response = await fetch(`${API_BASE_URL}/api/blogs`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

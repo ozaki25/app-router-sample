@@ -16,7 +16,7 @@ export async function updateBlogRepository(input: UpdateBlogInput): Promise<Blog
   });
   const requestBody = toApiRequest(validatedInput);
 
-  const response = await fetch(`${API_BASE_URL}/blogs/${input.id}`, {
+  const response = await fetch(`${API_BASE_URL}/api/blogs/${input.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
