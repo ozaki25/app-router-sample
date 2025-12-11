@@ -36,7 +36,7 @@ export function CommentSection({ blogId, initialPaginatedComments }: Props) {
   };
 
   return (
-    <section className="mt-12 flex flex-col gap-4">
+    <section className="pt-8 flex flex-col gap-8">
       <h2 className="text-2xl font-bold">コメント</h2>
       <CommentList
         comments={paginatedComments.comments}
