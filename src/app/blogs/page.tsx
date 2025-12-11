@@ -4,6 +4,7 @@ import { Pagination } from '@/components/ui/Pagination';
 import { PaginationInfo } from '@/components/ui/PaginationInfo';
 import { BlogList } from '@/features/blog/components/BlogList';
 import { getAllBlogRepository } from '@/repositories/blog/getAll';
+import { Blog } from '@/types/blog';
 import { notFound } from 'next/navigation';
 
 export default async function BlogsPage({ searchParams }: PageProps<'/blogs'>) {
@@ -21,15 +22,40 @@ export default async function BlogsPage({ searchParams }: PageProps<'/blogs'>) {
   });
 
   return (
+    <BlogsPageComponent
+      blogs={blogs}
+      total={total}
+      totalPages={totalPages}
+      currentPage={currentPage}
+    />
+  );
+}
+
+type BlogsPageComponentProps = {
+  blogs: Blog[];
+  total: number;
+  totalPages: number;
+  currentPage: number;
+};
+
+export function BlogsPageComponent({
+  blogs,
+  total,
+  totalPages,
+  currentPage,
+}: BlogsPageComponentProps) {
+  return (
     <Container>
       <PageHeader title="ブログ一覧" description="投稿されたブログ記事の一覧です" />
       <div className="mb-4">
         <PaginationInfo currentPage={currentPage} total={total} />
       </div>
       <BlogList blogs={blogs} />
-      <div className="mt-8">
-        <Pagination currentPage={currentPage} totalPages={totalPages} />
-      </div>
+      {totalPages > 1 && (
+        <div className="mt-8">
+          <Pagination currentPage={currentPage} totalPages={totalPages} />
+        </div>
+      )}
     </Container>
   );
 }
