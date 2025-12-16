@@ -1,3 +1,4 @@
+import { fetcher } from './fetcher';
 import { responseSchema, toPaginatedComments } from './responseSchema';
 import { API_BASE_URL } from '@/constants/api';
 import { COMMENTS_PER_PAGE } from '@/constants/comment';
@@ -7,7 +8,7 @@ export async function getCommentsByBlogIdRepository(
   blogId: string,
   page: number = 1
 ): Promise<PaginatedComments> {
-  const response = await fetch(
+  const response = await fetcher(
     `${API_BASE_URL}/api/blogs/${blogId}/comments?page=${page}&per_page=${COMMENTS_PER_PAGE}`,
     {
       cache: 'no-store',
