@@ -1,7 +1,7 @@
-import { INITIAL_BLOGS } from './data';
+import { NextResponse } from 'next/server';
 import { PAGE_SIZE } from '@/constants/pagination';
 import { Blog } from '@/types/blog';
-import { NextResponse } from 'next/server';
+import { INITIAL_BLOGS } from './data';
 
 const getBlogs = (): Blog[] => {
   if (typeof global !== 'undefined' && (global as any).blogsData) {

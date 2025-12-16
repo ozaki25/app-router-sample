@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardBody } from '@/components/ui/Card';
+import { Card, CardBody, CardHeader } from '@/components/ui/Card';
 import { Container } from '@/components/ui/Container';
 import { LinkButton } from '@/components/ui/LinkButton';
 import { NextLogo } from '@/components/ui/NextLogo';

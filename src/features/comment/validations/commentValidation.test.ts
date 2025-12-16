@@ -1,5 +1,5 @@
+import { describe, expect, it } from 'vitest';
 import { commentSchema } from './commentValidation';
-import { describe, it, expect } from 'vitest';
 
 describe('commentSchema', () => {
   describe('正常系', () => {

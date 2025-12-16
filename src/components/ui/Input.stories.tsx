@@ -1,5 +1,5 @@
-import { Input } from './Input';
 import type { Meta, StoryObj } from '@storybook/nextjs';
+import { Input } from './Input';
 
 const meta = {
   title: 'UI/Input',

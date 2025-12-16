@@ -1,6 +1,6 @@
+import { API_BASE_URL } from '@/constants/api';
 import { fetcher } from './fetcher';
 import { requestSchema, toApiRequest } from './requestSchema';
-import { API_BASE_URL } from '@/constants/api';
 
 type CreateCommentInput = {
   blogId: string;

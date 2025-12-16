@@ -1,3 +1,5 @@
+import type { Preview } from '@storybook/nextjs';
+import { initialize, mswLoader } from 'msw-storybook-addon';
 import '../src/app/globals.css';
 import {
   createBlogSuccess,
@@ -8,8 +10,6 @@ import {
   getCommentsSuccess,
   updateBlogSuccess,
 } from '../src/mock/handler';
-import type { Preview } from '@storybook/nextjs';
-import { initialize, mswLoader } from 'msw-storybook-addon';
 
 initialize({
   serviceWorker: {

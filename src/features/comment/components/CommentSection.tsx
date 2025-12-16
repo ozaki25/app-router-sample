@@ -1,10 +1,10 @@
 'use client';
 
+import { useState, useTransition } from 'react';
+import type { PaginatedComments } from '@/types/comment';
 import { getComments } from '../actions/getComments';
 import { CommentForm } from './CommentForm';
 import { CommentList } from './CommentList';
-import type { PaginatedComments } from '@/types/comment';
-import { useState, useTransition } from 'react';
 
 type Props = {
   blogId: string;

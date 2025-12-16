@@ -1,5 +1,5 @@
-import { Header } from './Header';
 import type { Meta, StoryObj } from '@storybook/nextjs';
+import { Header } from './Header';
 
 const meta = {
   title: 'Layout/Header',

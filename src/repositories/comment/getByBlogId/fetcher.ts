@@ -1,5 +1,5 @@
-import mockData from './mock.json';
 import { USE_MOCK } from '@/constants/mock';
+import mockData from './mock.json';
 
 export async function fetcher(input: RequestInfo | URL, init?: RequestInit): Promise<Response> {
   if (USE_MOCK) {

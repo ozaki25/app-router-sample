@@ -1,5 +1,5 @@
-import { BlogsPageComponent } from './page';
 import type { Meta, StoryObj } from '@storybook/nextjs';
+import { BlogsPageComponent } from './page';
 
 const meta = {
   title: 'Page/Blog/List',

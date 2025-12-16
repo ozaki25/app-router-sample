@@ -1,5 +1,5 @@
-import { NextLogo } from './NextLogo';
 import type { Meta, StoryObj } from '@storybook/nextjs';
+import { NextLogo } from './NextLogo';
 
 const meta = {
   title: 'UI/NextLogo',

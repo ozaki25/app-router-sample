@@ -1,5 +1,5 @@
-import { Blog } from '@/types/blog';
 import { z } from 'zod';
+import { Blog } from '@/types/blog';
 
 export const responseSchema = z.object({
   id: z.string(),

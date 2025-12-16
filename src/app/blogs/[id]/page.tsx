@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { Container } from '@/components/ui/Container';
 import { BlogDetail } from '@/features/blog/components/BlogDetail';
 import { CommentSection } from '@/features/comment/components/CommentSection';
@@ -5,7 +6,6 @@ import { getByIdBlogRepository } from '@/repositories/blog/getById';
 import { getCommentsByBlogIdRepository } from '@/repositories/comment/getByBlogId';
 import { Blog } from '@/types/blog';
 import { PaginatedComments } from '@/types/comment';
-import { notFound } from 'next/navigation';
 
 type Props = {
   params: Promise<{ id: string }>;

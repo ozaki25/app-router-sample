@@ -1,5 +1,5 @@
+import { describe, expect, it } from 'vitest';
 import { formatDate } from './date';
-import { describe, it, expect } from 'vitest';
 
 describe('formatDate', () => {
   it('ISO形式の日付文字列を YYYY/MM/DD HH:mm 形式にフォーマットする', () => {

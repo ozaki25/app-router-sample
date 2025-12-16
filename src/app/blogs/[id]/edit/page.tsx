@@ -1,9 +1,9 @@
+import { notFound } from 'next/navigation';
 import { Container } from '@/components/ui/Container';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { EditBlogForm } from '@/features/blog/components/EditBlogForm';
 import { getByIdBlogRepository } from '@/repositories/blog/getById';
 import { Blog } from '@/types/blog';
-import { notFound } from 'next/navigation';
 
 type EditBlogPageComponentProps = {
   blog: Blog;

@@ -1,6 +1,6 @@
-import { CommentForm } from './CommentForm';
 import type { Meta, StoryObj } from '@storybook/nextjs';
 import { action } from 'storybook/actions';
+import { CommentForm } from './CommentForm';
 
 const meta = {
   title: 'Features/Comment/CommentForm',

@@ -1,5 +1,5 @@
-import Page from './page';
 import type { Meta, StoryObj } from '@storybook/nextjs';
+import Page from './page';
 
 const meta = {
   title: 'Page/Home',

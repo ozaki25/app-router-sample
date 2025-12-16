@@ -1,6 +1,6 @@
-import { BlogDetailPageComponent } from './page';
-import { createCommentError, deleteBlogError, getCommentsError } from '@/mock/handler';
 import type { Meta, StoryObj } from '@storybook/nextjs';
+import { createCommentError, deleteBlogError, getCommentsError } from '@/mock/handler';
+import { BlogDetailPageComponent } from './page';
 
 const meta = {
   title: 'Page/Blog/Detail',

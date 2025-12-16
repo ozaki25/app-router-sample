@@ -1,5 +1,5 @@
+import { describe, expect, it } from 'vitest';
 import { generatePageNumbers } from './pagination';
-import { describe, it, expect } from 'vitest';
 
 describe('generatePageNumbers', () => {
   it('総ページ数が1の場合、[1]を返す', () => {

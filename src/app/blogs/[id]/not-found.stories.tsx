@@ -1,5 +1,5 @@
-import Page from './not-found';
 import type { Meta, StoryObj } from '@storybook/nextjs';
+import Page from './not-found';
 
 const meta = {
   title: 'Page/Blog/NotFound',

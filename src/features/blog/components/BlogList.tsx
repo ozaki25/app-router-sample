@@ -1,7 +1,7 @@
-import { Card, CardHeader, CardBody, CardFooter } from '@/components/ui/Card';
+import Link from 'next/link';
+import { Card, CardBody, CardFooter, CardHeader } from '@/components/ui/Card';
 import { formatDate } from '@/libs/shared/date';
 import { Blog } from '@/types/blog';
-import Link from 'next/link';
 
 function Empty() {
   return (

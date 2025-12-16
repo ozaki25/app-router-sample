@@ -1,8 +1,8 @@
 'use client';
 
+import { useTransition } from 'react';
 import { Button } from '@/components/ui/Button';
 import { deleteBlogAction } from '@/features/blog/actions/deleteBlog';
-import { useTransition } from 'react';
 
 type Props = {
   blogId: string;

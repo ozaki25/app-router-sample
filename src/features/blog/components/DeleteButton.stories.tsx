@@ -1,5 +1,5 @@
-import { DeleteButton } from './DeleteButton';
 import type { Meta, StoryObj } from '@storybook/nextjs';
+import { DeleteButton } from './DeleteButton';
 
 const meta = {
   title: 'Features/Blog/DeleteButton',

@@ -1,5 +1,5 @@
+import { describe, expect, it } from 'vitest';
 import { responseSchema, toBlog } from './responseSchema';
-import { describe, it, expect } from 'vitest';
 
 describe('responseSchema', () => {
   it('valid data を受け入れる', () => {

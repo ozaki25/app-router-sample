@@ -1,5 +1,5 @@
-import { PageHeader } from './PageHeader';
 import type { Meta, StoryObj } from '@storybook/nextjs';
+import { PageHeader } from './PageHeader';
 
 const meta = {
   title: 'UI/PageHeader',

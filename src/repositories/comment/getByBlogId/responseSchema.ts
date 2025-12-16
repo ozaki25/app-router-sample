@@ -1,5 +1,5 @@
-import type { Comment, PaginatedComments } from '@/types/comment';
 import { z } from 'zod';
+import type { Comment, PaginatedComments } from '@/types/comment';
 
 const commentResponseSchema = z.object({
   id: z.string(),

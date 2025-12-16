@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { Container } from '@/components/ui/Container';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Pagination } from '@/components/ui/Pagination';
@@ -5,7 +6,6 @@ import { PaginationInfo } from '@/components/ui/PaginationInfo';
 import { BlogList } from '@/features/blog/components/BlogList';
 import { getAllBlogRepository } from '@/repositories/blog/getAll';
 import { Blog } from '@/types/blog';
-import { notFound } from 'next/navigation';
 
 export default async function BlogsPage({ searchParams }: PageProps<'/blogs'>) {
   const params = await searchParams;

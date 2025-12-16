@@ -1,5 +1,5 @@
-import { Blog, PaginatedBlogs } from '@/types/blog';
 import { z } from 'zod';
+import { Blog, PaginatedBlogs } from '@/types/blog';
 
 const blogResponseSchema = z.object({
   id: z.string(),

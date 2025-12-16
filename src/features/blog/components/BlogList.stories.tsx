@@ -1,5 +1,5 @@
-import { BlogList } from './BlogList';
 import type { Meta, StoryObj } from '@storybook/nextjs';
+import { BlogList } from './BlogList';
 
 const mockBlogs = [
   {

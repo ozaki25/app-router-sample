@@ -1,6 +1,6 @@
-import { CommentList } from './CommentList';
 import type { Meta, StoryObj } from '@storybook/nextjs';
 import { action } from 'storybook/actions';
+import { CommentList } from './CommentList';
 
 const meta = {
   title: 'Features/Comment/CommentList',

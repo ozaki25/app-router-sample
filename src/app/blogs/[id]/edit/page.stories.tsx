@@ -1,6 +1,6 @@
-import { EditBlogPageComponent } from './page';
-import { updateBlogError } from '@/mock/handler';
 import type { Meta, StoryObj } from '@storybook/nextjs';
+import { updateBlogError } from '@/mock/handler';
+import { EditBlogPageComponent } from './page';
 
 const meta = {
   title: 'Page/Blog/Edit',

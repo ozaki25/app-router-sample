@@ -3,5 +3,7 @@
   "trailingComma": "es5",
   "tabWidth": 2,
   "printWidth": 100,
+  "importOrder": ["<BUILTIN_MODULES>", "<THIRD_PARTY_MODULES>", "^@/(.*)$", "^[./]"],
+  "importOrderSortSpecifiers": true,
   "plugins": ["@trivago/prettier-plugin-sort-imports"]
 }

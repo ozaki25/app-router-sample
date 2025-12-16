@@ -1,5 +1,5 @@
-import { generatePageNumbers } from '@/libs/shared/pagination';
 import Link from 'next/link';
+import { generatePageNumbers } from '@/libs/shared/pagination';
 
 type ActiveButtonProps = {
   nextPage: number;

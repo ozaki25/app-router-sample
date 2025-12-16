@@ -1,6 +1,6 @@
-import { Button } from './Button';
 import type { Meta, StoryObj } from '@storybook/nextjs';
 import { action } from 'storybook/actions';
+import { Button } from './Button';
 
 const meta = {
   title: 'UI/Button',

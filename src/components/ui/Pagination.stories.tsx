@@ -1,6 +1,6 @@
-import { Pagination } from './Pagination';
 import type { Meta, StoryObj } from '@storybook/nextjs';
 import { action } from 'storybook/actions';
+import { Pagination } from './Pagination';
 
 const meta = {
   title: 'UI/Pagination',

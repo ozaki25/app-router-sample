@@ -1,7 +1,7 @@
-import { fetcher } from './fetcher';
-import { responseSchema, toPaginatedBlogs } from './responseSchema';
 import { API_BASE_URL } from '@/constants/api';
 import { PaginatedBlogs } from '@/types/blog';
+import { fetcher } from './fetcher';
+import { responseSchema, toPaginatedBlogs } from './responseSchema';
 
 export async function getAllBlogRepository(page: number = 1): Promise<PaginatedBlogs> {
   const response = await fetcher(`${API_BASE_URL}/api/blogs?page=${page}`, {

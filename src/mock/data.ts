@@ -1,8 +1,8 @@
 import { PAGE_SIZE } from '@/constants/pagination';
 import { BlogResponse, PaginatedBlogsResponse } from '@/repositories/blog/getAll/responseSchema';
 import {
-  PaginatedCommentsResponse,
   CommentResponse,
+  PaginatedCommentsResponse,
 } from '@/repositories/comment/getByBlogId/responseSchema';
 
 export function getBlog(id: string): BlogResponse {

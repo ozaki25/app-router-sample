@@ -1,8 +1,8 @@
-import { fetcher } from './fetcher';
-import { responseSchema, toPaginatedComments } from './responseSchema';
 import { API_BASE_URL } from '@/constants/api';
 import { COMMENTS_PER_PAGE } from '@/constants/comment';
 import { PaginatedComments } from '@/types/comment';
+import { fetcher } from './fetcher';
+import { responseSchema, toPaginatedComments } from './responseSchema';
 
 export async function getCommentsByBlogIdRepository(
   blogId: string,

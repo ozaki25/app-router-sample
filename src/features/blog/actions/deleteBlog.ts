@@ -1,9 +1,9 @@
 'use server';
 
-import { deleteBlogRepository } from '@/repositories/blog/delete';
-import { ActionState } from '@/types/action';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
+import { deleteBlogRepository } from '@/repositories/blog/delete';
+import { ActionState } from '@/types/action';
 
 export async function deleteBlogAction(id: string): Promise<ActionState> {
   try {

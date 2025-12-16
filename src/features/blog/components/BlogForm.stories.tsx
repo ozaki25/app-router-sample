@@ -1,6 +1,6 @@
-import { BlogForm } from './BlogForm';
 import type { Meta, StoryObj } from '@storybook/nextjs';
 import { action } from 'storybook/actions';
+import { BlogForm } from './BlogForm';
 
 const meta = {
   title: 'Features/Blog/BlogForm',

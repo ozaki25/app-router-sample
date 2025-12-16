@@ -1,5 +1,5 @@
+import { describe, expect, it } from 'vitest';
 import { requestSchema, toApiRequest } from './requestSchema';
-import { describe, it, expect } from 'vitest';
 
 describe('requestSchema', () => {
   it('valid data を受け入れる', () => {

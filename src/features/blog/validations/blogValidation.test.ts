@@ -1,5 +1,5 @@
+import { describe, expect, it } from 'vitest';
 import { blogSchema } from './blogValidation';
-import { describe, it, expect } from 'vitest';
 
 describe('blogSchema', () => {
   describe('正常系', () => {
