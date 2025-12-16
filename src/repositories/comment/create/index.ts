@@ -1,3 +1,4 @@
+import { fetcher } from './fetcher';
 import { requestSchema, toApiRequest } from './requestSchema';
 import { API_BASE_URL } from '@/constants/api';
 
@@ -10,7 +11,7 @@ export async function createCommentRepository(input: CreateCommentInput): Promis
   const validatedInput = requestSchema.parse(input);
   const requestBody = toApiRequest(validatedInput);
 
-  const response = await fetch(`${API_BASE_URL}/api/blogs/${input.blogId}/comments`, {
+  const response = await fetcher(`${API_BASE_URL}/api/blogs/${input.blogId}/comments`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

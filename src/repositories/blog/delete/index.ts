@@ -1,7 +1,8 @@
+import { fetcher } from './fetcher';
 import { API_BASE_URL } from '@/constants/api';
 
 export async function deleteBlogRepository(id: string): Promise<void> {
-  const response = await fetch(`${API_BASE_URL}/api/blogs/${id}`, {
+  const response = await fetcher(`${API_BASE_URL}/api/blogs/${id}`, {
     method: 'DELETE',
   });
   if (!response.ok) {
