@@ -4,7 +4,7 @@ import { getBlogComments } from '@/repositories/blogs-comments/list';
 import type { ActionResponse } from '@/types/action';
 import type { PaginatedComments } from '@/types/comment';
 
-export async function getComments(
+export async function getCommentsAction(
   blogId: string,
   page: number
 ): Promise<ActionResponse<PaginatedComments>> {

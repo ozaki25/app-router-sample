@@ -2,7 +2,7 @@ import { useActionState, useEffect, useEffectEvent } from 'react';
 import { Button } from '@/components/ui/Button';
 import { Card, CardBody } from '@/components/ui/Card';
 import { Textarea } from '@/components/ui/Textarea';
-import { createCommentAction } from '@/features/comment/actions/createComment';
+import { createCommentAction } from '@/features/comment/actions/createCommentAction';
 
 const initialState = {
   success: false,
