@@ -2,7 +2,7 @@
 
 import { useTransition } from 'react';
 import { Button } from '@/components/ui/Button';
-import { deleteBlogAction } from '@/features/blog/actions/deleteBlog';
+import { deleteBlogAction } from '@/features/blog/actions/deleteBlogAction';
 
 type Props = {
   blogId: string;

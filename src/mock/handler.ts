@@ -1,7 +1,7 @@
 import { HttpHandler, HttpResponse, delay, http } from 'msw';
 import { API_BASE_URL } from '@/constants/api';
-import { BlogResponse, PaginatedBlogsResponse } from '@/repositories/blog/getAll/responseSchema';
-import { PaginatedCommentsResponse } from '@/repositories/comment/getByBlogId/responseSchema';
+import { PaginatedCommentsResponse } from '@/repositories/blogs-comments/list/responseSchema';
+import { BlogResponse, PaginatedBlogsResponse } from '@/repositories/blogs/list/responseSchema';
 import { getAllBlog, getBlog, getCommentsByBlogId } from './data';
 
 export const getAllBlogSuccess = (): HttpHandler => {

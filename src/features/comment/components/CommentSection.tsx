@@ -2,7 +2,7 @@
 
 import { useState, useTransition } from 'react';
 import type { PaginatedComments } from '@/types/comment';
-import { getComments } from '../actions/getComments';
+import { getCommentsAction } from '../actions/getCommentsAction';
 import { CommentForm } from './CommentForm';
 import { CommentList } from './CommentList';
 
@@ -18,7 +18,7 @@ export function CommentSection({ blogId, initialPaginatedComments }: Props) {
 
   const fetchComments = (page: number) => {
     startTransition(async () => {
-      const result = await getComments(blogId, page);
+      const result = await getCommentsAction(blogId, page);
       if (result.success) {
         setPaginatedComments(result.data);
       } else {

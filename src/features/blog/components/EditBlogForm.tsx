@@ -1,7 +1,7 @@
 'use client';
 
 import { useActionState, useEffect } from 'react';
-import { updateBlogAction } from '@/features/blog/actions/updateBlog';
+import { updateBlogAction } from '@/features/blog/actions/updateBlogAction';
 import { Blog } from '@/types/blog';
 import { BlogForm } from './BlogForm';
 

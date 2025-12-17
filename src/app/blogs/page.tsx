@@ -4,7 +4,7 @@ import { PageHeader } from '@/components/ui/PageHeader';
 import { Pagination } from '@/components/ui/Pagination';
 import { PaginationInfo } from '@/components/ui/PaginationInfo';
 import { BlogList } from '@/features/blog/components/BlogList';
-import { getAllBlogRepository } from '@/repositories/blog/getAll';
+import { getBlogs } from '@/repositories/blogs/list';
 import { Blog } from '@/types/blog';
 
 export default async function BlogsPage({ searchParams }: PageProps<'/blogs'>) {
@@ -17,7 +17,7 @@ export default async function BlogsPage({ searchParams }: PageProps<'/blogs'>) {
     notFound();
   }
 
-  const { blogs, total, totalPages, currentPage } = await getAllBlogRepository(page).catch(() => {
+  const { blogs, total, totalPages, currentPage } = await getBlogs(page).catch(() => {
     notFound();
   });
 
