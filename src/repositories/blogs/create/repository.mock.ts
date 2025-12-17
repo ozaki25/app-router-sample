@@ -1,7 +1,7 @@
 import { Blog } from '@/types/blog';
 import { CreateBlogInput } from './repository';
 
-export async function createBlogRepository(input: CreateBlogInput): Promise<Blog> {
+export async function createBlog(input: CreateBlogInput): Promise<Blog> {
   await new Promise((resolve) => setTimeout(resolve, 300));
   return {
     id: 'mock-id',

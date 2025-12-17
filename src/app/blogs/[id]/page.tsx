@@ -2,8 +2,8 @@ import { notFound } from 'next/navigation';
 import { Container } from '@/components/ui/Container';
 import { BlogDetail } from '@/features/blog/components/BlogDetail';
 import { CommentSection } from '@/features/comment/components/CommentSection';
-import { getByIdBlogRepository } from '@/repositories/blog/getById';
-import { getCommentsByBlogIdRepository } from '@/repositories/comment/getByBlogId';
+import { getBlogComments } from '@/repositories/blogs-comments/list';
+import { getBlog } from '@/repositories/blogs/detail';
 import { Blog } from '@/types/blog';
 import { PaginatedComments } from '@/types/comment';
 
@@ -13,13 +13,13 @@ type Props = {
 
 export default async function BlogDetailPage({ params }: Props) {
   const { id } = await params;
-  const blog = await getByIdBlogRepository(id);
+  const blog = await getBlog(id);
 
   if (!blog) {
     notFound();
   }
 
-  const paginatedComments = await getCommentsByBlogIdRepository(id);
+  const paginatedComments = await getBlogComments(id);
 
   return <BlogDetailPageComponent id={id} blog={blog} paginatedComments={paginatedComments} />;
 }

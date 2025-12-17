@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { Container } from '@/components/ui/Container';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { EditBlogForm } from '@/features/blog/components/EditBlogForm';
-import { getByIdBlogRepository } from '@/repositories/blog/getById';
+import { getBlog } from '@/repositories/blogs/detail';
 import { Blog } from '@/types/blog';
 
 type EditBlogPageComponentProps = {
@@ -24,7 +24,7 @@ type Props = {
 
 export default async function EditBlogPage({ params }: Props) {
   const { id } = await params;
-  const blog = await getByIdBlogRepository(id);
+  const blog = await getBlog(id);
 
   if (!blog) {
     notFound();

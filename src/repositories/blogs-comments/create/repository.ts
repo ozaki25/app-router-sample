@@ -6,7 +6,7 @@ export type CreateCommentInput = {
   content: string;
 };
 
-export async function createCommentRepository(input: CreateCommentInput): Promise<void> {
+export async function createBlogComment(input: CreateCommentInput): Promise<void> {
   const response = await fetch(`${API_BASE_URL}/api/blogs/${input.blogId}/comments`, {
     method: 'POST',
     headers: {

@@ -3,7 +3,7 @@
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { blogSchema } from '@/features/blog/validations/blogValidation';
-import { updateBlogRepository } from '@/repositories/blog/update';
+import { updateBlog } from '@/repositories/blogs/update';
 import { ActionState } from '@/types/action';
 
 export async function updateBlogAction(
@@ -23,7 +23,7 @@ export async function updateBlogAction(
       };
     }
 
-    await updateBlogRepository({ id, ...result.data });
+    await updateBlog({ id, ...result.data });
 
     revalidatePath('/blogs');
     revalidatePath(`/blogs/${id}`);

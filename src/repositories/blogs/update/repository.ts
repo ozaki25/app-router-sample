@@ -8,7 +8,7 @@ export type UpdateBlogInput = {
   content: string;
 };
 
-export async function updateBlogRepository(input: UpdateBlogInput): Promise<Blog> {
+export async function updateBlog(input: UpdateBlogInput): Promise<Blog> {
   const response = await fetch(`${API_BASE_URL}/api/blogs/${input.id}`, {
     method: 'PUT',
     headers: {

@@ -3,7 +3,7 @@ import { COMMENTS_PER_PAGE } from '@/constants/comment';
 import { PaginatedComments } from '@/types/comment';
 import { responseSchema, toPaginatedComments } from './responseSchema';
 
-export async function getCommentsByBlogIdRepository(
+export async function getBlogComments(
   blogId: string,
   page: number = 1
 ): Promise<PaginatedComments> {

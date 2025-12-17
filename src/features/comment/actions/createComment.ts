@@ -1,7 +1,7 @@
 'use server';
 
 import { commentSchema } from '@/features/comment/validations/commentValidation';
-import { createCommentRepository } from '@/repositories/comment/create';
+import { createBlogComment } from '@/repositories/blogs-comments/create';
 import { ActionState } from '@/types/action';
 
 export async function createCommentAction(
@@ -20,7 +20,7 @@ export async function createCommentAction(
       };
     }
 
-    await createCommentRepository({ blogId, content: result.data.content });
+    await createBlogComment({ blogId, content: result.data.content });
 
     return {
       success: true,

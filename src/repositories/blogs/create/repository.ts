@@ -7,7 +7,7 @@ export type CreateBlogInput = {
   content: string;
 };
 
-export async function createBlogRepository(input: CreateBlogInput): Promise<Blog> {
+export async function createBlog(input: CreateBlogInput): Promise<Blog> {
   const response = await fetch(`${API_BASE_URL}/api/blogs`, {
     method: 'POST',
     headers: {

@@ -1,6 +1,6 @@
 'use server';
 
-import { getCommentsByBlogIdRepository } from '@/repositories/comment/getByBlogId';
+import { getBlogComments } from '@/repositories/blogs-comments/list';
 import type { ActionResponse } from '@/types/action';
 import type { PaginatedComments } from '@/types/comment';
 
@@ -9,7 +9,7 @@ export async function getComments(
   page: number
 ): Promise<ActionResponse<PaginatedComments>> {
   try {
-    const data = await getCommentsByBlogIdRepository(blogId, page);
+    const data = await getBlogComments(blogId, page);
     return { success: true, data };
   } catch (error) {
     console.error('Failed to get comments:', error);
