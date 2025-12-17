@@ -7,6 +7,7 @@ export async function getCommentsByBlogIdRepository(
   blogId: string,
   page: number = 1
 ): Promise<PaginatedComments> {
+  await new Promise((resolve) => setTimeout(resolve, 300));
   const data = getCommentsByBlogId({
     blogId,
     total: 15,

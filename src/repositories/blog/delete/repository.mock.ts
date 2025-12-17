@@ -1,3 +1,3 @@
 export async function deleteBlogRepository(_id: string): Promise<void> {
-  return;
+  await new Promise((resolve) => setTimeout(resolve, 300));
 }
