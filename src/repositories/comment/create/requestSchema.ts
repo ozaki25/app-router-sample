@@ -1,13 +1,6 @@
-import { z } from 'zod';
+import { CreateCommentInput } from './repository';
 
-export const requestSchema = z.object({
-  blogId: z.string(),
-  content: z.string(),
-});
-
-export type Request = z.infer<typeof requestSchema>;
-
-export const toApiRequest = (input: Request) => ({
+export const toApiRequest = (input: CreateCommentInput) => ({
   blog_id: input.blogId,
   content: input.content,
 });
