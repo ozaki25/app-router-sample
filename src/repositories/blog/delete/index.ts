@@ -1,11 +1,5 @@
-import { API_BASE_URL } from '@/constants/api';
-import { fetcher } from './fetcher';
+import { USE_MOCK } from '@/constants/mock';
 
-export async function deleteBlogRepository(id: string): Promise<void> {
-  const response = await fetcher(`${API_BASE_URL}/api/blogs/${id}`, {
-    method: 'DELETE',
-  });
-  if (!response.ok) {
-    throw new Error('Failed to delete blog');
-  }
-}
+export const deleteBlogRepository = USE_MOCK
+  ? (await import('./repository.mock')).deleteBlogRepository
+  : (await import('./repository')).deleteBlogRepository;
